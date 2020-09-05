@@ -1,0 +1,6 @@
+/* miniprogram/pages/index/index.wxss */
+.container{
+  background-image: url('');
+  background-size: contain;
+  
+}
