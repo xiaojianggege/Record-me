@@ -1,0 +1,37 @@
+<view class="wrapper">
+	<view class="head">
+		<image class="head-img" src="../../images/note_bg.png" />
+	</view>
+	<view class="content">
+		<view class="content-top">
+			<text class="content-top__time">2020</text>
+			<view class="content-top__portrait">
+				<image class="portrait" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599372006902&di=3ac5eddb2ba2c0f1cf832351d1647564&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn19%2F0%2Fw400h400%2F20180910%2F3391-hiycyfw5413589.jpg"></image>
+			</view>
+			<view class="content-top__tips">
+				来点正式的记录吧
+			</view>
+		</view>
+		<view class="content-desc">
+			<view class="content-desc-block">
+				<view class="content-desc__text">
+					<text >今天dddd爱的发觉来看绿卡角度看立法局快乐的家垃圾地方了3碗饭</text>
+				</view>
+				<view class="content-desc__tiem">
+					<text>23:20</text>
+				</view>
+			</view>
+			<view class="content-desc__img">
+				<image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1089874897,1268118658&fm=26&gp=0.jpg" />
+				<image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1089874897,1268118658&fm=26&gp=0.jpg" />
+				<image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1089874897,1268118658&fm=26&gp=0.jpg" />
+			</view>
+			<view class="content-icon">
+				<image class="address" src="../../images/address.png"></image>
+				<image class="address" src="../../images/expression.png"></image>
+			</view>
+		</view>
+	</view>
+	<view class="btn">+</view>
+</view>
+
