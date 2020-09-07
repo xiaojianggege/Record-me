@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "personalSection": "../../components/personalSection/personalSetion"
+  }
 }

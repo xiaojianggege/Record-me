@@ -1,2 +1,12 @@
 <!--miniprogram/pages/personal/personal.wxml-->
-<text>miniprogram/pages/personal/personal.wxml</text>
+<view class="personal-container">
+  <view class="user-info">
+    <view class="user-image">
+      <image src="" mode="widthFix" />
+    </view>
+  </view>
+  
+  <view class="banner-news">一共记录了xx张便签</view>
+  <!-- 组件 -->
+  <personalSection></personalSection>>
+</view>

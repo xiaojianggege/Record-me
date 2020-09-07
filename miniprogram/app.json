@@ -1,5 +1,6 @@
 {
   "pages": [
+    "components/personalSection/personalSetion",
     "pages/note/note",
     "pages/personal/personal",
     "pages/index/index"
@@ -11,6 +12,5 @@
     "navigationBarTitleText": "这就是青春",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "sitemapLocation": "sitemap.json"
 }
