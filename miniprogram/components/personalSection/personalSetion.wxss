@@ -9,7 +9,8 @@
   margin: 0 auto;
   margin-top:20rpx;
   border-radius: 10px;
-  box-shadow: 0 4rpx 4rpx rgb(209, 193, 193);
+  box-shadow: 0 4rpx 4rpx rgb(221, 213, 213);
+  background-color: #ffffff;
 }
 .info-warpper{
   display: flex;
