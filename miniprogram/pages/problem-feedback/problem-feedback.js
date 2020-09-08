@@ -1,14 +1,11 @@
-// miniprogram/pages/personal/personal.js
+// miniprogram/pages/problem-feedback/problem-feedback.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    sectionInfo: [
-      { iconUrl: '../../images/意见建议 (1).png', title: '意见建议'},
-      { iconUrl: '../../images/问题反馈.png', title: '问题反馈'}
-    ]
+
   },
 
   /**

@@ -8,5 +8,8 @@
   
   <view class="banner-news">一共记录了xx张便签</view>
   <!-- 组件 -->
-  <personalSection></personalSection>>
+  <block wx:for="{{sectionInfo}}" wx:key="item">
+    <personalSection iconUrl="{{item.iconUrl}}" title="{{item.title}}"></personalSection>
+  </block>
+  
 </view>

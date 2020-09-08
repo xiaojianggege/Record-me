@@ -2,9 +2,9 @@
 <view class="section">
   <view class="info-warpper">
     <view class="icon">
-      <image src="../../images/意见建议 (1).png" mode="widthFix" />
+      <image src="{{iconUrl}}" mode="widthFix" />
     </view>
-    <view class="title">意见建议</view>
+    <view class="title">{{title}}</view>
   </view>
   <view class="btn">
     <image src="../../images/返 回.png" mode="widthFix" />
