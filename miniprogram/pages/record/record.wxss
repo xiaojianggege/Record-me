@@ -1,9 +1,15 @@
 .wrapper {
   width: 100vw;
   height: 100vh;
-  padding: 15rpx;
+  padding: 0 15rpx 15rpx;
   box-sizing: border-box;
-  background-color: #ecf2f7;
+  background-color: #F5FAFE;
+}
+.color-envelope{
+  width: 100%;
+}
+.color-envelope image{
+  width: 100%;
 }
 .content-top__tips {
   color: #000;
@@ -11,10 +17,6 @@
   background-color: #fff;
   font-size: 30rpx;
   padding: 10rpx 20rpx;
-  position: absolute;
-  box-shadow: 5rpx 5rpx 5rpx #888888;
-  left: 50%;
-  transform: translate(-50%);
 }
 .content-time{
   display: flex;

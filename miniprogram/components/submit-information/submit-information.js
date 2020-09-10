@@ -4,7 +4,22 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    title: {
+      type: String,
+      value: ''
+    },
+    showSticky: {
+      type: Boolean,
+      value: false
+    },
+    showClamp: {
+      type: Boolean,
+      value: false
+    },
+    placeholder: {
+      type: String,
+      value: ''
+    }
   },
 
   /**
@@ -18,6 +33,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    submit(e) {
+      console.log(e)
+    }
   }
 })

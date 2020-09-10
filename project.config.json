@@ -25,7 +25,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wx3078301efc6121b7",
@@ -94,6 +94,76 @@
 					"id": -1,
 					"name": "pages/record/record",
 					"pathName": "pages/record/record",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "components/submit-information/submit-information",
+					"pathName": "components/submit-information/submit-information",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/note/note",
+					"pathName": "pages/note/note",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/suggestion/suggestion",
+					"pathName": "pages/suggestion/suggestion",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/essay/essay",
+					"pathName": "pages/essay/essay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "components/tabBar/tabBar",
+					"pathName": "components/tabBar/tabBar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/suggestion/suggestion",
+					"pathName": "pages/suggestion/suggestion",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/personal/personal",
+					"pathName": "pages/personal/personal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "components/tabBar/tabBar",
+					"pathName": "components/tabBar/tabBar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/record/record",
+					"pathName": "pages/record/record",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/problem-feedback/problem-feedback",
+					"pathName": "pages/problem-feedback/problem-feedback",
 					"scene": null
 				}
 			]

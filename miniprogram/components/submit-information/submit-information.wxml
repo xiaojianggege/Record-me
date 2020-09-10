@@ -1,2 +1,19 @@
-<!--components/submit-information/submit-information.wxml-->
-<text>components/submit-information/submit-information.wxml</text>
+<!-- components/submit-information/submit-information.wxml -->
+<view class="container">
+  <view class="toast">
+    {{title}}
+  </view>
+  <view class="section">
+    <form bindsubmit="submit" >
+      <textarea maxlength="-1" class="content" placeholder="{{placeholder}}" name="name"></textarea>
+      <button size="mini" form-type="submit">提交</button>
+    </form>
+  </view>
+  <view class="sticky" wx:if="{{showSticky}}">
+    <image src="../../images/钉子.png" alt="" mode="widthFix" />
+    <image src="../../images/钉子.png" alt="" mode="widthFix" />
+  </view>
+  <view class="clamp" wx:if="{{showClamp}}">
+    <image src="../../images/夹子.png" mode="widthFix"/>
+  </view>
+</view>

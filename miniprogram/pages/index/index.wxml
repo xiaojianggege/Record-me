@@ -1,4 +1,6 @@
 <!-- miniprogram/pages/index/index.wxml -->
+<tab-bar title="{{pageTitle}}" backgroundColor="{{backgroundColor}}"></tab-bar>
+
 <view class="container">
   <view class="bg-image">
     <image src="../../images/index-background.jpg" alt="" mode="widthFix" />
@@ -25,7 +27,7 @@
         <view class="line"></view>
         <view class="button-pad">
           <view class="button">
-            <image src="../../images/发动态 (1).png" alt="" />
+            <image src="../../images/记录 (2).png" alt="" />
           </view>
         </view>
       </view>
@@ -33,7 +35,7 @@
         <view class="line"></view>
         <view class="button-pad">
           <view class="button">
-            <image src="../../images/记录 (1).png" alt="" />
+            <image src="../../images//发动态 (2).png" alt="" />
           </view>
         </view>
       </view>

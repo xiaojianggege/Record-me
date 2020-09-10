@@ -4,9 +4,9 @@
   background-color: #F5FAFE;
 }
 .user-info{
-  height: 300rpx;
+  height: 200rpx;
   background-color: #6698CB;
-  padding-top: 100rpx;
+  padding-top: 40rpx;
 }
 .user-image{
   margin: 0 auto;

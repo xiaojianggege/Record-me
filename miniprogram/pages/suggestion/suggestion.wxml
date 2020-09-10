@@ -1,2 +1,4 @@
 <!--miniprogram/pages/suggestion/suggestion.wxml-->
-<text>miniprogram/pages/suggestion/suggestion.wxml</text>
+<tab-bar title="{{title}}"></tab-bar>
+
+<submit-info title="{{title}}" showSticky="{{true}}" showClamp="{{false}}" placeholder="{{placeholder}}"></submit-info>

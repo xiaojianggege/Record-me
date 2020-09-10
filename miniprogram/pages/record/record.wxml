@@ -1,4 +1,9 @@
+<tab-bar title="{{pageTitle}}"></tab-bar> 
+<view class="color-envelope">
+    <image src="../../images/color-envelope.png" mode="widthFix"/>
+  </view>
 <view class="wrapper">
+ 
 	<view class="content-top__tips">突然想写下一些什么</view>
 	<view class="content">
 		<view class="content-time">

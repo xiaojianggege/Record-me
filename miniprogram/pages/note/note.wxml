@@ -1,3 +1,4 @@
+  <tab-bar></tab-bar>
 <view class="wrapper">
 	<view class="head">
 		<image class="head-img" src="../../images/note_bg.png" />

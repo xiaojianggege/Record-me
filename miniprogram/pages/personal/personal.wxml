@@ -1,4 +1,5 @@
 <!--miniprogram/pages/personal/personal.wxml-->
+<tab-bar title="{{pageTitle}}"></tab-bar>
 <view class="personal-container">
   <view class="user-info">
     <view class="user-image">

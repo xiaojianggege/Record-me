@@ -1,12 +1,13 @@
-// miniprogram/pages/suggestion/suggestion.js
+// miniprogram/pages/essay/essay.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title: "意见建议",
-    placeholder: "可以在此输入您的意见"
+    title: '涂涂改改',
+    placeholder: '就写这吧',
+    pageTitle: '便签'
   },
 
   /**

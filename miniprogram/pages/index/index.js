@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    pageTitle: '首页',
+    backgroundColor: '#505278'
   },
 
   /**
