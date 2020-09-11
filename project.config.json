@@ -164,6 +164,20 @@
 					"id": -1,
 					"name": "pages/problem-feedback/problem-feedback",
 					"pathName": "pages/problem-feedback/problem-feedback",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "components/record-container/record-container",
+					"pathName": "components/record-container/record-container",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "components/footerbar/footerbar",
+					"pathName": "components/footerbar/footerbar",
 					"scene": null
 				}
 			]

@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "record": "../../components/record-container/record-container"
+  }
 }
