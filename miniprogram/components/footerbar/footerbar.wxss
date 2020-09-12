@@ -11,6 +11,7 @@
   display: flex;
   justify-content: space-between;
   padding: 20rpx 0;
+  background-color: #F5FAFE;
 }
 .footerBar .item-wrapper{
   width: 40%;
@@ -38,14 +39,31 @@
 }
 
 .add{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  background-color: #F5FAFE;
   position: absolute;
   left: 50%;
+  top: -40%;
   transform: translateX(-50%);
-
+  box-shadow: 0 0 2rpx rgb(173, 167, 167);
+}
+.bgc{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 .add-wrapper{
-  width: 100rpx;
-  height: 100rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
   background-color: #40B8FF;
   justify-content: center;

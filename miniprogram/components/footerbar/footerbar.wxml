@@ -13,8 +13,10 @@
   </view>
 
   <view class="add">
-    <view class="add-wrapper">
-      <image src="../../images/加号.png" mode="widthFix" />
+    <view class="bgc">
+      <view class="add-wrapper">
+        <image src="../../images/加号.png" mode="widthFix" />
+      </view>
     </view>
   </view>
 
