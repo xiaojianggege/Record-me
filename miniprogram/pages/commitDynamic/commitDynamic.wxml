@@ -19,5 +19,9 @@
     <view class="addImage">
       <image src="../../images/上传图片 (2).png" mode="widthFix"/>
     </view>
+
+    <view class="addPlace">
+      
+    </view>
   </view>
 </view>
