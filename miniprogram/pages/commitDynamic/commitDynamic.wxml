@@ -1,0 +1,23 @@
+<!-- miniprogram/pages/commitDynamic/commitDynamic.wxml -->
+<tab-bar title="{{pageTitle}}"></tab-bar>
+<view class="wrapper">
+  <view class="header-content">
+    <view class="btn">取消</view>
+    <view class="time">
+      <text>13:04</text>
+    </view>
+    <view class="btn">发布</view>
+  </view>
+  <view class="main">
+    <view class="user-info">
+      <view class="user_avatar">
+        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599502850013&di=19d1d3c893022cd54d2a3d00d24be50d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201706%2F10%2F20170610192627_yhAMN.thumb.700_0.jpeg" mode="widthFix" />
+      </view>
+      <view class="user_name">奖你一条鱼</view>
+    </view>
+    <textarea maxlength="-1" class="content" placeholder="{{placeholder}}"></textarea>
+    <view class="addImage">
+      <image src="../../images/上传图片 (2).png" mode="widthFix"/>
+    </view>
+  </view>
+</view>
