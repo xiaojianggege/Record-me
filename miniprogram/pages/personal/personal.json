@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "personalSection": "../../components/personalSection/personalSetion",
+    "tab-bar": "../../components/tabBar/tabBar"
+  }
 }

@@ -1,17 +1,13 @@
-<view class="wrapper">
-	<view class="content-top__tips">突然想写下一些什么</view>
-	<view class="content">
-		<view class="content-time">
-			<image class="content-time__icon" src="../../images/time.png"></image>
-			<text>北京时间</text>
-		</view>
-
-		<textarea
-		 class="content-text"
-		 cols="50"
-		 rows="40"
-		></textarea>
-	</view>
-	<view class="btn">+</view>
-</view>
+<tab-bar title="{{pageTitle}}"></tab-bar> 
+<view class="color-envelope">
+    <image src="../../images/color-envelope.png" mode="widthFix"/>
+  </view>
+  <view class="title-wrapper">
+    	<view class="content-top__tips">我的便签</view>
+  </view>
+  
+  <view class="record-wrapper">
+    <record></record>
+  </view>
+<footer-bar />
 

@@ -1,0 +1,6 @@
+<!--miniprogram/pages/essay/essay.wxml-->
+<tab-bar title="{{pageTitle}}"></tab-bar>
+
+<submit-info title="{{title}}" showSticky="{{false}}" showClamp="{{true}}" placeholder="{{placeholder}}"></submit-info>
+
+

@@ -1,7 +1,24 @@
 //app.js
 App({
   onLaunch: function () {
+  
+  wx.user = {} // 创建一个user对象来储存用户信息
     
+  // 初始化user对象
+  wx.getSystemInfo({
+    success: res => {
+      wx.user.statusBarHeight = res.statusBarHeight
+      // 手机型号适配
+      if(res.platform === 'android'){
+        wx.user.navBarHeight = 48
+      }else{
+        wx.user.navBarHeight = 44
+      }
+      console.log(wx.user.navBarHeight)
+    },
+  });
+
+
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -14,7 +31,8 @@ App({
         traceUser: true,
       })
     }
-
-    this.globalData = {}
+    
+    this.globalData = {
+    }
   }
 })

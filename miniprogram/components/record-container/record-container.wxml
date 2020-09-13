@@ -1,0 +1,18 @@
+<!--components/record-container/record-container.wxml-->
+<view class="container">
+  <view class="time-wrapper">
+    <image src="../../images/time.png" mode="widthFix" />
+    <text>124:124</text>
+  </view>
+
+  <view class="content-wrapper">
+    <text class="" space='nbsp' decode  >
+     过去很长一段时间内，前端和切图仔几乎同义。提到架构时，基本指的就是后端架构。但就在近几年，前端领域可谓日新月异
+    </text>
+  </view>
+  <view class="clip">
+    <image src="../../images/夹子.png" mode="widthFix"/> 
+    <image src="../../images/夹子.png" mode="widthFix"/> 
+  </view>
+</view>
+

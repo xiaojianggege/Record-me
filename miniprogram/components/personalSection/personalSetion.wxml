@@ -1,0 +1,12 @@
+<!-- components/personalSection/personalSetion.wxml -->
+<view class="section">
+  <view class="info-warpper">
+    <view class="icon">
+      <image src="{{iconUrl}}" mode="widthFix" />
+    </view>
+    <view class="title">{{title}}</view>
+  </view>
+  <view class="btn">
+    <image src="../../images/返 回.png" mode="widthFix" />
+  </view>
+</view>
