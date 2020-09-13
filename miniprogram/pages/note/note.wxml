@@ -33,6 +33,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="btn">+</view>
+
 </view>
 
+<footer-bar />

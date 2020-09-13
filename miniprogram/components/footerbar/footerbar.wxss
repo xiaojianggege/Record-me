@@ -74,3 +74,6 @@
 .add-wrapper image{
   width: 60rpx;
 }
+.active text{
+  color: #40B8FF;
+}

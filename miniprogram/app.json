@@ -23,6 +23,7 @@
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "submit-info": "./components/submit-information/submit-information",
-    "tab-bar": "./components/tabBar/tabBar"
+    "tab-bar": "./components/tabBar/tabBar",
+    "footer-bar": "./components/footerbar/footerbar"
   }
 }

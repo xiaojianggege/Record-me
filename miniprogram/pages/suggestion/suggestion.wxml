@@ -2,3 +2,4 @@
 <tab-bar title="{{title}}"></tab-bar>
 
 <submit-info title="{{title}}" showSticky="{{true}}" showClamp="{{false}}" placeholder="{{placeholder}}"></submit-info>
+

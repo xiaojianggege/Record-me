@@ -1,5 +1,4 @@
 <!--components/record-container/record-container.wxml-->
-
 <view class="container">
   <view class="time-wrapper">
     <image src="../../images/time.png" mode="widthFix" />
@@ -16,3 +15,4 @@
     <image src="../../images/夹子.png" mode="widthFix"/> 
   </view>
 </view>
+

@@ -9,3 +9,5 @@
   <view class="record-wrapper">
     <record></record>
   </view>
+<footer-bar />
+
