@@ -69,8 +69,6 @@
   width: 600rpx;
 }
 
-.content-desc__tiem {}
-
 .content-desc__img {
   display: flex;
   flex-wrap: nowrap;
