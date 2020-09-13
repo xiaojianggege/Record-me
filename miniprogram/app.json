@@ -1,5 +1,5 @@
 {
-  "pages": [ 
+  "pages": [
     "pages/record/record",
     "components/personalSection/personalSetion",
     "components/tabBar/tabBar",
@@ -11,13 +11,14 @@
     "pages/index/index",
     "pages/problem-feedback/problem-feedback",
     "pages/suggestion/suggestion",
-    "pages/essay/essay"
+    "pages/essay/essay",
+    "pages/commitDynamic/commitDynamic"
   ],
   "window": {
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black",
+    "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json",

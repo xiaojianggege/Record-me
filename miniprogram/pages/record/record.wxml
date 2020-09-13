@@ -1,4 +1,4 @@
-<tab-bar title="{{pageTitle}}"></tab-bar> 
+<tab-bar title="{{pageTitle}}"></tab-bar>
 <view class="color-envelope">
     <image src="../../images/color-envelope.png" mode="widthFix"/>
   </view>
