@@ -15,7 +15,11 @@ Page({
   onLoad: function (options) {
 
   },
-
+  gotoNote() {
+    wx.navigateTo({
+      url: '../note/note'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
