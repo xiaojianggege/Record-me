@@ -1,37 +1,63 @@
 <!-- components/footerbar/footerbar.wxml -->
 <view class="footerBar">
-  
-  <view class="item-wrapper">
-    <view class="item index">
-      <image src="../../images/气球.png" mode="widthFix" />
-    </view>
-    <view class="item record {{isShowOne? 'active' : '' }}"  bind:tap="handleActiveOne">
-      <image wx:if="{{!isShowOne}}" src="../../images/发动态 (1).png" mode="widthFix" />
-      <image wx:else src="../../images/发动态 (2).png" mode="widthFix" />
-      <text>动态</text>
-    </view>
-  </view>
+	<view class="item-wrapper">
+		<view class="item index" bindtap="gotoIndex">
+			<image src="../../images/气球.png" mode="widthFix" />
+		</view>
+		<view bindtap="gotoNote" class="item record {{isShowOne? 'active' : '' }}">
+			<image
+			 wx:if="{{!isShowOne}}"
+			 src="../../images/发动态 (1).png"
+			 mode="widthFix"
+			/>
+			<image
+			 wx:else
+			 src="../../images/发动态 (2).png"
+			 mode="widthFix"
+			/>
+			<text>动态</text>
+		</view>
+	</view>
 
-  <view class="add">
-    <view class="bgc">
-      <view class="add-wrapper">
-        <image src="../../images/加号.png" mode="widthFix" />
-      </view>
-    </view>
-  </view>
+	<view class="add">
+		<view class="bgc">
+			<view class="add-wrapper">
+				<image src="../../images/加号.png" mode="widthFix" />
+			</view>
+		</view>
+	</view>
 
-  <view class="item-wrapper">
-    <view class="item note {{!isShowOne && isShowTwo? 'active' : ''}}"  bind:tap="handleActiveTwo">
-      <image wx:if="{{!isShowOne && isShowTwo}}" src="../../images/记录 (2).png" mode="widthFix" />
-      <image wx:else src="../../images/记录 (1).png" mode="widthFix" />
-
-      <text>便签</text>
-    </view>
-    <view class="item personal {{!isShowOne && !isShowTwo ? 'active' : ''}}"  bind:tap="handleActiveThree">
-      <image wx:if="{{!personalUrlActive}}" src="../../images/wode(1).png" mode="widthFix" />
-      <image wx:else src="../../images/wode(2).png" mode="widthFix" />
-
-      <text>我的</text>
-    </view>
-  </view>
+	<view class="item-wrapper" bindtap="gotoRecord">
+		<view class="item note {{!isShowOne && isShowTwo? 'active' : ''}}" bindtap="handleActiveTwo">
+			<image
+			 wx:if="{{!isShowOne && isShowTwo}}"
+			 src="../../images/记录 (2).png"
+			 mode="widthFix"
+			/>
+			<image
+			 wx:else
+			 src="../../images/记录 (1).png"
+			 mode="widthFix"
+			/>
+			<text>便签</text>
+		</view>
+		<view
+		 class="item personal {{!isShowOne && !isShowTwo ? 'active' : ''}}"
+		 bindtap="handleActiveThree"
+		 bindtap="gotoMine"
+		>
+			<image
+			 wx:if="{{!personalUrlActive}}"
+			 src="../../images/wode(1).png"
+			 mode="widthFix"
+			/>
+			<image
+			 wx:else
+			 src="../../images/wode(2).png"
+			 mode="widthFix"
+			/>
+			<text>我的</text>
+		</view>
+	</view>
 </view>
+

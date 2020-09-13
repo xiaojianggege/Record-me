@@ -20,12 +20,33 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handleActiveOne() {
+    gotoIndex() {
       this.setData({
         isShowOne: true,
         personalUrlActive: false
-
       })
+      wx.redirectTo({
+        url: '/pages/index/index'
+      })
+
+    },
+    gotoNote() {
+      wx.redirectTo({
+        url: '/pages/note/note'
+      })
+    },
+    gotoRecord() {
+      wx.redirectTo({
+        url: '/pages/record/record'
+      })
+    },
+    gotoMine() {
+      wx.redirectTo({
+        url: '/pages/mine/mine'
+      })
+    },
+    handleActiveOne() {
+     
     },
     handleActiveTwo() {
       this.setData({
