@@ -13,7 +13,7 @@ Page({
     let that = this
     let tempFilePaths = that.data.tempFilePaths
     wx.chooseImage({
-      count: 1,
+      count: 9,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success (res) {
