@@ -1,4 +1,5 @@
 // miniprogram/pages/index/index.js
+const app = getApp();
 Page({
 
   /**
@@ -13,9 +14,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.cloud.callFunction({
+      // 要调用的云函数名称
+      name: 'getUserInfo',
+      // 传递给云函数的event参数
+      data: {
 
+      }
+    }).then(res => {
+      console.log(res);
+      
+    }).catch(err => {
+      // handle error
+    })
   },
   gotoNote() {
+    app.globalData.navId = 1
     wx.navigateTo({
       url: '../note/note'
     })
