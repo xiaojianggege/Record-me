@@ -1,22 +1,22 @@
 //app.js
 App({
   onLaunch: function () {
-  
-  wx.user = {} // 创建一个user对象来储存用户信息
-    
-  // 初始化user对象
-  wx.getSystemInfo({
-    success: res => {
-      wx.user.statusBarHeight = res.statusBarHeight
-      // 手机型号适配
-      if(res.platform === 'android'){
-        wx.user.navBarHeight = 48
-      }else{
-        wx.user.navBarHeight = 44
-      }
-      console.log(wx.user.navBarHeight)
-    },
-  });
+
+    wx.user = {} // 创建一个user对象来储存用户信息
+
+    // 初始化user对象
+    wx.getSystemInfo({
+      success: res => {
+        wx.user.statusBarHeight = res.statusBarHeight
+        // 手机型号适配
+        if (res.platform === 'android') {
+          wx.user.navBarHeight = 48
+        } else {
+          wx.user.navBarHeight = 44
+        }
+        console.log(wx.user.navBarHeight)
+      },
+    });
 
 
     if (!wx.cloud) {
@@ -31,8 +31,12 @@ App({
         traceUser: true,
       })
     }
-    
+
     this.globalData = {
+
     }
+  },
+  globalData: {
+    navId: 1
   }
 })

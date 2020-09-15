@@ -4,15 +4,15 @@
 		<view class="item index" bindtap="gotoIndex">
 			<image src="../../images/气球.png" mode="widthFix" />
 		</view>
-		<view bindtap="gotoNote" class="item record {{isShowOne? 'active' : '' }}">
+		<view bindtap="gotoNote" class="item record {{navId == 1? 'active' : '' }}">
 			<image
-			 wx:if="{{!isShowOne}}"
-			 src="../../images/发动态 (1).png"
+			 wx:if="{{navId == 1}}"
+			 src="../../images/发动态 (2).png"
 			 mode="widthFix"
 			/>
 			<image
 			 wx:else
-			 src="../../images/发动态 (2).png"
+			 src="../../images/发动态 (1).png"
 			 mode="widthFix"
 			/>
 			<text>动态</text>
@@ -21,16 +21,16 @@
 
 	<view class="add">
 		<view class="bgc">
-			<view class="add-wrapper">
+			<view class="add-wrapper" bindtap="gotoAdd">
 				<image src="../../images/加号.png" mode="widthFix" />
 			</view>
 		</view>
 	</view>
 
-	<view class="item-wrapper" bindtap="gotoRecord">
-		<view class="item note {{!isShowOne && isShowTwo? 'active' : ''}}" bindtap="handleActiveTwo">
+	<view class="item-wrapper">
+		<view class="item note {{navId == 2? 'active' : ''}}" bindtap="gotoRecord">
 			<image
-			 wx:if="{{!isShowOne && isShowTwo}}"
+			 wx:if="{{navId == 2}}"
 			 src="../../images/记录 (2).png"
 			 mode="widthFix"
 			/>
@@ -41,19 +41,15 @@
 			/>
 			<text>便签</text>
 		</view>
-		<view
-		 class="item personal {{!isShowOne && !isShowTwo ? 'active' : ''}}"
-		 bindtap="handleActiveThree"
-		 bindtap="gotoMine"
-		>
+		<view class="item personal {{navId == 3 ? 'active' : ''}}" bindtap="gotoPersonal">
 			<image
-			 wx:if="{{!personalUrlActive}}"
-			 src="../../images/wode(1).png"
+			 wx:if="{{navId == 3}}"
+			 src="../../images/wode(2).png"
 			 mode="widthFix"
 			/>
 			<image
 			 wx:else
-			 src="../../images/wode(2).png"
+			 src="../../images/wode(1).png"
 			 mode="widthFix"
 			/>
 			<text>我的</text>

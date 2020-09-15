@@ -16,7 +16,7 @@
 		"scopeDataCheck": false,
 		"uglifyFileName": false,
 		"checkInvalidKey": true,
-		"checkSiteMap": true,
+		"checkSiteMap": false,
 		"uploadWithSourceMap": true,
 		"compileHotReLoad": false,
 		"babelSetting": {
@@ -25,7 +25,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wx3078301efc6121b7",
@@ -178,6 +178,27 @@
 					"id": -1,
 					"name": "components/footerbar/footerbar",
 					"pathName": "components/footerbar/footerbar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/commitDynamic/commitDynamic",
+					"pathName": "pages/commitDynamic/commitDynamic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/essay/essay",
+					"pathName": "pages/essay/essay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/essay/essay",
+					"pathName": "pages/essay/essay",
 					"query": "",
 					"scene": null
 				},

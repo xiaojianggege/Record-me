@@ -26,7 +26,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    content: ''
   },
 
   /**
@@ -34,7 +34,21 @@ Component({
    */
   methods: {
     submit(e) {
-      console.log(e)
+      const db = wx.cloud.database();
+      db.collection('suggest').add({
+        data: {
+          content: this.data.content
+        }
+      }).then(res=>{
+        console.log(res);
+        
+      })
+
+    },
+    contentInput(e) {
+      this.setData({
+        content: e.detail.value
+      })
     }
   }
 })

@@ -18,7 +18,37 @@ Page({
   onLoad: function (options) {
 
   },
+  gotoSuggestion(){
+    wx.navigateTo({
+      url: '../suggestion/suggestion',
+    })
+  },
+  commitSuggestion(e){
+    console.log(e);
+    
+   const db = wx.cloud.database();
+    // var that = this;
+    // db.collection('suggest').where({
+    //   _openid: 'user-open-id',
+    // })
+    //   .get({
+    //     success: function (res) {
+    //       // res.data 是包含以上定义的两条记录的数组
+    //       console.log(res.data)
+    //       data = res.data
 
+    //       console.log(data[0].list.name)
+    //       that.setData({
+    //         newlist: data,
+    //       })
+    //     }
+    //   })
+    db.collection('suggest').add({
+      data:{
+
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
