@@ -16,12 +16,22 @@
       <view class="user_name">奖你一条鱼</view>
     </view>
     <textarea maxlength="-1" class="content" placeholder="{{placeholder}}"></textarea>
-    <view class="addImage">
-      <image src="../../images/上传图片 (2).png" mode="widthFix"/>
+    <view class="image-wrapper">
+      <view class="addImage" bind:tap="getImage">
+        <image src="../../images/上传图片 (2).png" mode="widthFix" />
+      </view>
+      <block wx:for="{{tempFilePaths}}" wx:key="index">
+        <view class="showImage">
+          <image src="{{item}}" alt="" mode="aspectFill"/>
+          <view class="delete-pic" data-index="{{index}}" bind:tap="deletePic">
+            <icon class="iconfont icon-delete" />
+          </view>
+        </view>
+      </block>
     </view>
-
     <view class="addPlace">
-      
+      <image src="../../images/地址.png" mode="widthFix" />
+      <span>添加地址</span>
     </view>
   </view>
 </view>
