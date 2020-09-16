@@ -65,7 +65,7 @@
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  background-color: #40B8FF;
+  background-color: #6698CB;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -75,5 +75,5 @@
   width: 60rpx;
 }
 .active text{
-  color: #40B8FF;
+  color:#6698CB;
 }
