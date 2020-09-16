@@ -14,6 +14,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("1111");
+    
+    wx.getUserInfo({
+      success: function(res) {
+        console.log(res);
+        
+        var userInfo = res.userInfo
+        var nickName = userInfo.nickName
+        var avatarUrl = userInfo.avatarUrl
+        var gender = userInfo.gender //性别 0：未知、1：男、2：女
+        var province = userInfo.province
+        var city = userInfo.city
+        var country = userInfo.country
+      }
+    })
     wx.cloud.callFunction({
       // 要调用的云函数名称
       name: 'getUserInfo',
