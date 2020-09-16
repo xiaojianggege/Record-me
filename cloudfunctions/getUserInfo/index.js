@@ -6,7 +6,7 @@ const db = cloud.database({ env })
 // 云函数入口函数
 exports.main = async (event, context) => {
   console.log(event);
-  
+
   const userInfo = event.userInfo
   //先查询有无该openId
   const checkUser = await db.collection('user').where({
@@ -17,20 +17,22 @@ exports.main = async (event, context) => {
     await db.collection('group-user').doc(checkUser.data[0]._id)
       .update({
         data: {
-          avatarUrl: event.avatarUrl,
           nickName: event.nickName,
-          sex: event.sex
+          avatarUrl: event.avatarUrl,
+          loginTime: event.loginTime
         }
       })
   } else {
-    const insertResult = await db.collection('user').add({
+    return await db.collection('user').add({
       data: {
-        avatarUrl: event.avatarUrl,
         nickName: event.nickName,
-        sex: event.sex,
-        name: '',
+        avatarUrl: event.avatarUrl,
+        gender: event.gender,
+        province: event.province,
+        city: event.city,
+        country: event.country,
         openId: event.userInfo.openId,
-        createTime: new Date()
+        loginTime: event.loginTime
       }
     })
   }
