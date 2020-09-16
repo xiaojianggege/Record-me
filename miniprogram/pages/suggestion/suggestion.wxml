@@ -6,6 +6,6 @@
  showSticky="{{true}}"
  showClamp="{{false}}"
  placeholder="{{placeholder}}"
- bindtap="commitSuggestion"
+ bind:submit="commitSuggestion"
 ></submit-info>
 

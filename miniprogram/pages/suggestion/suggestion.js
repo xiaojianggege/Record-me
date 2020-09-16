@@ -13,9 +13,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
+  commitSuggestion(e) {
+    console.log(e.detail.content);
+    //调用云函数
+    wx.cloud.callFunction({
+      name: 'createSuggest',
+      data: {
+        content: e.detail.content
+      },
+      success(res) {
+        console.log(res)
 
+        // Notify({ type: 'primary', message: '创建成功', duration: 1500, selector: '#notify-selector', background: '#28a745' });
+        setTimeout(() => {
+          wx.redirectTo({
+            url: '/pages/personal/personal'
+          })
+        }, 2000);
+      },
+      fail(err) {
+        console.log(err)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

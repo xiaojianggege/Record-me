@@ -28,22 +28,12 @@ Component({
   data: {
     content: ''
   },
-
   /**
    * 组件的方法列表
    */
   methods: {
     submit(e) {
-      const db = wx.cloud.database();
-      db.collection('suggest').add({
-        data: {
-          content: this.data.content
-        }
-      }).then(res=>{
-        console.log(res);
-        
-      })
-
+      this.triggerEvent('submit',{content:this.data.content},{})
     },
     contentInput(e) {
       this.setData({

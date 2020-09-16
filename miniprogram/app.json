@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/start/start",
     "pages/record/record",
     "components/personalSection/personalSetion",
     "components/tabBar/tabBar",
