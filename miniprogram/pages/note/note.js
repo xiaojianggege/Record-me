@@ -39,7 +39,7 @@ Page({
    */
   onLoad: function (options) {
     let currentTime = $util.dateFormat("YYYY-mm", new Date())
-    console.log(currentTime);
+    // console.log(currentTime);
     this.setData({
       currentTime,
       userInfo:app.globalData.userInfo
