@@ -6,7 +6,7 @@
 		<view class="time">
 			<text>13:04</text>
 		</view>
-		<view class="btn" bind:tap="commitNote">发布</view>
+		<view class="btn">发布</view>
 	</view>
 	<view class="main">
 		<view class="user-info">
@@ -16,20 +16,19 @@
 			<view class="user_name">{{userInfo.nickName}}</view>
 		</view>
 		<textarea
-		 bindinput="contentInput"
 		 maxlength="-1"
 		 class="content"
 		 placeholder="{{placeholder}}"
 		></textarea>
 		<view class="image-wrapper">
 			<view class="addImage" bind:tap="getImage">
-				<image src="../../images/上传图片 (2).png" mode="widthFix" />
+				<image src="../../images/upImg.png" mode="widthFix" />
 			</view>
 			<block wx:for="{{tempFilePaths}}" wx:key="index">
 				<view class="showImage">
 					<image
 					 src="{{item}}"
-					 alt
+					 alt=""
 					 mode="aspectFill"
 					/>
 					<view
@@ -43,7 +42,7 @@
 			</block>
 		</view>
 		<view class="addPlace">
-			<image src="../../images/地址.png" mode="widthFix" />
+			<image src="../../images/adress.png" mode="widthFix" />
 			<span>添加地址</span>
 		</view>
 	</view>

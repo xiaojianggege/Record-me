@@ -1,12 +1,13 @@
 // miniprogram/pages/commitDynamic/commitDynamic.js
 const $util = require('../../common/util')
-let app = getApp();
+const app =  getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    userInfo:{},
     pageTitle: '添加动态',
     placeholder: '快记下来吧',
     tempFilePaths: [],

@@ -39,7 +39,7 @@
 }
 .banner .slogan-wrapper{
   height: 100rpx;
-  width: 80%;
+  width: 90%;
   text-align: center;
   line-height: 100rpx;
   font-weight: 700;

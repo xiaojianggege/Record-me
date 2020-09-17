@@ -7,6 +7,6 @@
     <view class="title">{{title}}</view>
   </view>
   <view class="btn">
-    <image src="../../images/返 回.png" mode="widthFix" />
+    <image src="../../images/rightBtn.png" mode="widthFix" />
   </view>
 </view>

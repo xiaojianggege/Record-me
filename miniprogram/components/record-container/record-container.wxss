@@ -1,10 +1,16 @@
 /* components/record-container/record-container.wxss */
 .container{
-  width: 94%;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 60rpx;
+  background-color: #F5FAFE;
+}
+.container-content{ 
+  margin: 0 auto;
+  width: 94%; 
   padding: 10rpx 0;
   position: relative;
-  background-color: #F5FAFE;
-  margin: 0 auto;
+  background-color: #fff;
   box-shadow: 0 4rpx 4rpx rgb(167, 161, 161);
 }
 .time-wrapper{
@@ -23,7 +29,8 @@
   text-indent: 2em;
 }
 .content-wrapper{
-  padding: 0rpx 20rpx;
+  padding: 20rpx 20rpx;
+  min-height: 140rpx;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 28rpx;
   border-top: 1px solid gray;

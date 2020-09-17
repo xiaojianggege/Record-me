@@ -33,13 +33,16 @@ Page({
       currentTime
     })
   },
-
+  cancel() {
+    this.setData({
+      show: false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let currentTime = $util.dateFormat("YYYY-mm", new Date())
-    // console.log(currentTime);
     this.setData({
       currentTime,
       userInfo:app.globalData.userInfo

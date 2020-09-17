@@ -2,17 +2,17 @@
 <view class="footerBar">
 	<view class="item-wrapper">
 		<view class="item index" bindtap="gotoIndex">
-			<image src="../../images/气球.png" mode="widthFix" />
+			<image src="../../images/indexIcon.png" mode="widthFix" />
 		</view>
 		<view bindtap="gotoNote" class="item record {{navId == 1? 'active' : '' }}">
 			<image
 			 wx:if="{{navId == 1}}"
-			 src="../../images/发动态 (2).png"
+			 src="../../images/note(2).png"
 			 mode="widthFix"
 			/>
 			<image
 			 wx:else
-			 src="../../images/发动态 (1).png"
+			 src="../../images/note(1).png"
 			 mode="widthFix"
 			/>
 			<text>动态</text>
@@ -22,7 +22,7 @@
 	<view class="add">
 		<view class="bgc">
 			<view class="add-wrapper" bindtap="gotoAdd">
-				<image src="../../images/加号.png" mode="widthFix" />
+				<image src="../../images/add.png" mode="widthFix" />
 			</view>
 		</view>
 	</view>
@@ -31,12 +31,12 @@
 		<view class="item note {{navId == 2? 'active' : ''}}" bindtap="gotoRecord">
 			<image
 			 wx:if="{{navId == 2}}"
-			 src="../../images/记录 (2).png"
+			 src="../../images/record(2).png"
 			 mode="widthFix"
 			/>
 			<image
 			 wx:else
-			 src="../../images/记录 (1).png"
+			 src="../../images/record(1).png"
 			 mode="widthFix"
 			/>
 			<text>便签</text>

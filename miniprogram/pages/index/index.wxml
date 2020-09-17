@@ -18,8 +18,8 @@
 		</view>
 		<!-- 中部banner栏 -->
 		<view class="banner">
-			<swiper class="slogan-wrapper">
-				<swiper-item class="slogan">海阔凭鱼跃，天高任鸟飞</swiper-item>
+			<swiper class="slogan-wrapper" autoplay interval="3000" vertical circular duration="1000">
+				<swiper-item class="slogan" wx:for="{{sloganList}}" wx:key="index">{{item}}</swiper-item>
 			</swiper>
 			<view class="showTime">
 				<text>{{currentTime}}</text>
@@ -39,7 +39,7 @@
 				<view class="line"></view>
 				<view class="button-pad">
 					<view class="button">
-						<image src="../../images//发动态 (2).png" alt="" />
+						<image src="../../images/note(3).png" alt="" />
 					</view>
 				</view>
 			</view>
