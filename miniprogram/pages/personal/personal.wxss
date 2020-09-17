@@ -5,7 +5,7 @@
 }
 .user-info{
   height: 200rpx;
-  background-color: #6698CB;
+  background-color:#6698CB;
   padding-top: 40rpx;
 }
 .user-image{

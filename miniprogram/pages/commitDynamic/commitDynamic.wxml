@@ -11,14 +11,14 @@
   <view class="main">
     <view class="user-info">
       <view class="user_avatar">
-        <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599502850013&di=19d1d3c893022cd54d2a3d00d24be50d&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201706%2F10%2F20170610192627_yhAMN.thumb.700_0.jpeg" mode="widthFix" />
+        <image src="{{userInfo.avatarUrl}}" mode="widthFix" />
       </view>
-      <view class="user_name">奖你一条鱼</view>
+      <view class="user_name">{{userInfo.nickName}}</view>
     </view>
     <textarea maxlength="-1" class="content" placeholder="{{placeholder}}"></textarea>
     <view class="image-wrapper">
       <view class="addImage" bind:tap="getImage">
-        <image src="../../images/上传图片 (2).png" mode="widthFix" />
+        <image src="../../images/upImg.png" mode="widthFix" />
       </view>
       <block wx:for="{{tempFilePaths}}" wx:key="index">
         <view class="showImage">
@@ -30,7 +30,7 @@
       </block>
     </view>
     <view class="addPlace">
-      <image src="../../images/地址.png" mode="widthFix" />
+      <image src="../../images/adress.png" mode="widthFix" />
       <span>添加地址</span>
     </view>
   </view>

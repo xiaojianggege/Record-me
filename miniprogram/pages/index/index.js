@@ -8,7 +8,13 @@ Page({
   data: {
     pageTitle: '首页',
     backgroundColor: '#505278',
-    currentTime: ''
+    currentTime: '',
+    sloganList: [
+      '海阔凭鱼跃，天高任鸟飞',
+      '醉后不知天在水，满船清梦压星河',
+      '人生自是有情痴，此恨无关风与月',
+      '人生但苦无妨，良人归来极好'
+    ]
   },
 
   /**

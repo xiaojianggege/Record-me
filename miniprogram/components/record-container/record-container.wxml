@@ -1,18 +1,16 @@
-<!--components/record-container/record-container.wxml-->
+<!-- components/record-container/record-container.wxml -->
 <view class="container">
-	<view class="time-wrapper">
-		<image src="../../images/time.png" mode="widthFix" />
-		<text>{{record.createTime}}</text>
-	</view>
-
-	<view class="content-wrapper">
-		<text class="" space='nbsp' decode  >
-    {{record.content}}
-    </text>
-	</view>
-	<view class="clip">
-		<image src="../../images/夹子.png" mode="widthFix" />
-		<image src="../../images/夹子.png" mode="widthFix" />
-	</view>
+  <view class="container-content">
+    <view class="time-wrapper">
+      <image src="../../images/time.png" mode="widthFix" />
+      <text>{{record.createTime}}</text>
+    </view>
+    <view class="content-wrapper">
+      <text class="" space='nbsp' decode>{{record.content}}</text>
+    </view>
+    <view class="clip">
+      <image src="../../images/clamp.png" mode="widthFix" />
+      <image src="../../images/clamp.png" mode="widthFix" />
+    </view>
+  </view>
 </view>
-

@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   padding: 20rpx 0;
-  background-color: #F5FAFE;
+  background-color: #fff;
 }
 .footerBar .item-wrapper{
   width: 40%;
@@ -65,7 +65,7 @@
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
-  background-color: #6698CB;
+  background-color: rgb(254, 67, 101);
   justify-content: center;
   display: flex;
   align-items: center;

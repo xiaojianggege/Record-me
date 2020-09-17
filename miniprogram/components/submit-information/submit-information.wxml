@@ -17,18 +17,18 @@
 	</view>
 	<view class="sticky" wx:if="{{showSticky}}">
 		<image
-		 src="../../images/钉子.png"
+		 src="../../images/nail.png"
 		 alt=""
 		 mode="widthFix"
 		/>
 		<image
-		 src="../../images/钉子.png"
+		 src="../../images/nail.png"
 		 alt=""
 		 mode="widthFix"
 		/>
 	</view>
 	<view class="clamp" wx:if="{{showClamp}}">
-		<image src="../../images/夹子.png" mode="widthFix" />
+		<image src="../../images/clamp.png" mode="widthFix" />
 	</view>
 </view>
 

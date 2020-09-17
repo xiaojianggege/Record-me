@@ -8,8 +8,8 @@ Page({
   data: {
     pageTitle: '我的',
     sectionInfo: [
-      { iconUrl: '../../images/意见建议 (1).png', title: '意见建议'},
-      { iconUrl: '../../images/问题反馈.png', title: '问题反馈'}
+      { iconUrl: '../../images/adviceImg.png', title: '意见建议'},
+      { iconUrl: '../../images/questionIcon.png', title: '问题反馈'}
     ],
     userInfo:{}
   },
