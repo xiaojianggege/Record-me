@@ -4,7 +4,7 @@
 <view class="container">
 	<view class="bg-image">
 		<image
-		 src="../../images/index-background.jpg"
+		 src="../../images/index-background.gif"
 		 alt=""
 		 mode="widthFix"
 		/>
@@ -18,8 +18,20 @@
 		</view>
 		<!-- 中部banner栏 -->
 		<view class="banner">
-			<swiper class="slogan-wrapper" autoplay interval="3000" vertical circular duration="1000">
-				<swiper-item class="slogan" wx:for="{{sloganList}}" wx:key="index">{{item}}</swiper-item>
+			<swiper
+			 class="slogan-wrapper"
+			 autoplay
+			 interval="3000"
+			 vertical
+			 circular
+			 duration="1000"
+			>
+				<swiper-item
+				 class="slogan"
+				 wx:for="{{sloganList}}"
+				 wx:key="index"
+				>{{item}}
+				</swiper-item>
 			</swiper>
 			<view class="showTime">
 				<text>{{currentTime}}</text>
@@ -38,7 +50,7 @@
 			<view class="button-content">
 				<view class="line"></view>
 				<view class="button-pad">
-					<view class="button">
+					<view class="button" bindtap="gotoRecord">
 						<image src="../../images/note(3).png" alt="" />
 					</view>
 				</view>

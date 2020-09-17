@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "record": "../../components/record-container/record-container"
+    "record": "../../components/record-container/record-container",
+    "load":"../../components/load/load"
   }
 }

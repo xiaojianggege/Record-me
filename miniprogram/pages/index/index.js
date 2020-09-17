@@ -40,6 +40,12 @@ Page({
       url: '../note/note'
     })
   },
+  gotoRecord() {
+    app.globalData.navId = 2
+    wx.navigateTo({
+      url: '../record/record'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

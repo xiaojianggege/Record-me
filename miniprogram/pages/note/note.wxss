@@ -7,8 +7,9 @@
 }
 
 .head-img {
+  border-radius: 10px;
   width: 100%;
-  height: 350rpx;
+  height: 700rpx;
 }
 
 .content {

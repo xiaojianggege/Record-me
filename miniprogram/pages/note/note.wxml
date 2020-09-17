@@ -1,29 +1,45 @@
 <tab-bar></tab-bar>
+
 <view class="wrapper">
-  <view class="head">
-    <image class="head-img" src="../../images/note_bg.png" />
-  </view>
-  <view class="content">
-    <view class="content-top">
-      <!-- 选择查看的日期 -->
-      <text class="content-top__time" bind:tap="showPopup">{{currentTime}}</text>
-      <!-- 下方弹出层组件 -->
-      <van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%;">
-        <!-- 选择日期组件 -->
-        <van-datetime-picker type="year-month" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" bind:input="onInput" bind:confirm="confirm" bind:cancel="cancel"/>
-      </van-popup>
-      <view class="content-top__portrait">
-        <image class="portrait" src="{{userInfo.avatarUrl}}"></image>
-      </view>
-      <view class="zhezhao-container">
-        <view class="zhezhao"></view>
-      </view>
-      <text class="content-top__name">{{userInfo.nickName}}</text>
-    </view>
-  </view>
-  <view class="content-top__tips">来点正式的记录吧</view>
+	<view class="head">
+		<image class="head-img" src="../../images/note_bg_.gif" />
+	</view>
+	<view class="content">
+		<view class="content-top">
+			<!-- 选择查看的日期 -->
+			<text class="content-top__time" bind:tap="showPopup">{{currentTime}}</text>
+			<!-- 下方弹出层组件 -->
+			<van-popup
+			 show="{{ show }}"
+			 round
+			 position="bottom"
+			 custom-style="height: 40%;"
+			>
+				<!-- 选择日期组件 -->
+				<van-datetime-picker
+				 type="year-month"
+				 value="{{ currentDate }}"
+				 min-date="{{ minDate }}"
+				 max-date="{{ maxDate }}"
+				 formatter="{{ formatter }}"
+				 bind:input="onInput"
+				 bind:confirm="confirm"
+				 bind:cancel="cancel"
+				/>
+			</van-popup>
+			<view class="content-top__portrait">
+				<image class="portrait" src="{{userInfo.avatarUrl}}"></image>
+			</view>
+			<view class="zhezhao-container">
+				<view class="zhezhao"></view>
+			</view>
+			<text class="content-top__name">{{userInfo.nickName}}</text>
+		</view>
+	</view>
+	<view class="content-top__tips">来点正式的记录吧</view>
 </view>
 
 <!-- 站位块 -->
 <view class="block-space" style="height: 130rpx"></view>
-<footer-bar />
+<footer-bar/>
+

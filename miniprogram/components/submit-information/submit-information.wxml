@@ -12,7 +12,12 @@
 			 name="name"
 			 bindinput="contentInput"
 			></textarea>
-			<button size="mini" form-type="submit">提交</button>
+			<button
+			 class="button"
+			 size="mini"
+			 form-type="submit"
+			>提交
+			</button>
 		</form>
 	</view>
 	<view class="sticky" wx:if="{{showSticky}}">

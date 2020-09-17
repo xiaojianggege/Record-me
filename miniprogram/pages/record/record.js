@@ -6,7 +6,8 @@ Page({
    */
   data: {
     pageTitle: '便签',
-    recordContent: []
+    recordContent: [],
+    remind:true
   },
 
   /**
@@ -29,6 +30,10 @@ Page({
       },
       fail(err) {
         console.log(err)
+      },complete: () => {
+        this.setData({
+          remind:false
+        })
       }
     })
   },

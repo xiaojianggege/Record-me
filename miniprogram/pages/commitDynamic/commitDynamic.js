@@ -1,26 +1,57 @@
 // miniprogram/pages/commitDynamic/commitDynamic.js
 const $util = require('../../common/util')
-const app =  getApp();
+const app = getApp();
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+// import Toast from '../../miniprogram_npm/@vant/weapp/dist/toast/toast';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:{},
+    userInfo: {},
     pageTitle: '添加动态',
     placeholder: '快记下来吧',
     tempFilePaths: [],
     userInfo: {},
     fileID: [],
-    content: ''
+    content: '',
+    show: false,
+    remind:true
   },
+  onConfirm() {
+    console.log('确定');
+    wx.navigateBack({
+      delta: 1, // 回退前 delta(默认为1) 页面
+    })
+  },
+
+  onClose() {
+    console.log('取消');
+    this.setData({
+      show: false
+    })
+
+  },
+  cancel() {
+    if (this.data.content.length > 0 || this.data.tempFilePaths.length > 0) { //用户有输入 
+      this.setData({
+        show: true
+      })
+    } else {  //直接返回 
+      this.onConfirm()
+    }
+
+  },
+
   getImage() {
+
     let that = this
     let tempFilePaths = that.data.tempFilePaths
     if (tempFilePaths.length >= 3) {
       //提醒最多三张
-      return;
+      Toast('当前最多只能发布三张图片哦')
+      return
     }
     wx.chooseImage({
       count: 3,
@@ -40,9 +71,17 @@ Page({
 
   commitNote() {
     let that = this;
+    if (that.data.content.length <= 0 && that.data.tempFilePaths.length <= 0) {
+      Toast('不能为空哦！')
+      return
+    }
+
     wx.showLoading({
-      title: '上传中',
+      title: '发布中',
     });
+    this.setData({
+      remind:true
+      })
     // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
     let tempFilePaths = that.data.tempFilePaths
     for (let i = 0; i < tempFilePaths.length; i++) {
@@ -51,46 +90,63 @@ Page({
         cloudPath,//云存储图片名字
         filePath: tempFilePaths[i],//临时路径
         success(res) {
+          console.log(1);
           let fileID = that.data.fileID
+          console.log(2);
           fileID.push(res.fileID)
-          that.setData({
-            fileID//云存储图片路径,可以把这个路径存到集合，要用的时候再取出来
+          console.log(3);
+          that.setData({ //云存储图片路径,可以把这个路径存到集合，要用的时候再取出来
+            fileID         
           });
+          console.log(4);
+          console.log(that.data.fileID);
         },
         fail: e => {
           console.error('[上传图片] 失败：', e)
         },
         complete: () => {
           wx.hideLoading()
+          that.createNote()
         }
       });
     }
-    that. createNote()
+
   },
   createNote() {
+    wx.showLoading({
+      title: '发布成功',
+    });
     let createTime = $util.dateFormat("YYYY-mm-dd HH:MM", new Date())
-          //调用云函数
-          wx.cloud.callFunction({
-            name: 'createNote',
-            data: {
-              content: this.data.content,
-              fileID: this.data.fileID,
-              createTime,
-              updateTime: createTime
-            },
-            success(res) {
-              console.log(res)
-              // Notify({ type: 'primary', message: '创建成功', duration: 1500, selector: '#notify-selector', background: '#28a745' });
-              setTimeout(() => {
-                wx.redirectTo({
-                  url: '/pages/note/note'
-                })
-              }, 1000);
-            },
-            fail(err) {
-              console.log(err)
-            }
+    //调用云函数
+    console.log(this.data.fileID);
+
+    wx.cloud.callFunction({
+      name: 'createNote',
+      data: {
+        content: this.data.content,
+        fileID: this.data.fileID,
+        createTime,
+        updateTime: createTime
+      },
+      success(res) {
+        console.log(res)
+
+        setTimeout(() => {
+          wx.redirectTo({
+            url: '/pages/note/note'
           })
+        }, 500);
+      },
+      fail(err) {
+        console.log(err)
+      },
+      complete: () => {
+        this.setData({
+          remind:false
+          })
+        wx.hideLoading()
+      }
+    })
   },
   contentInput(e) {
     this.setData({
@@ -111,11 +167,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
     this.setData({
-      currentTime:$util.dateFormat('HH:MM',new Date()),
+      currentTime: $util.dateFormat('HH:MM', new Date()),
       userInfo: app.globalData.userInfo
     })
+    setTimeout(()=>{
+      this.setData({
+      remind:false
+      })
+    },1000)
   },
 
   /**
