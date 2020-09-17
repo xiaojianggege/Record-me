@@ -12,18 +12,65 @@
 }
 
 .content {
-  background-color: #fff;
 }
 
 .content-top {
-  margin-top: 20rpx;
-  height: 70rpx;
-  color: #fff;
-  padding-left: 10rpx;
-  background-color: rgb(153, 153, 153);
-  line-height: 70rpx;
+  margin-top: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+
 }
+.content-top__time{
+  display: inline-block;
+  background-color: #6698CB;
+  padding: 0rpx 160rpx 0rpx 10rpx; 
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: #fff;
+}
+.zhezhao-container{
+  width: 40rpx;
+  height: 80rpx;
+  overflow: hidden;
+  margin-right: -280rpx;
+  z-index: 95;
+}
+.zhezhao{
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #ecf2f7;
+  border-radius: 50%;
+  float: right;
+}
+.content-top__name{
+  display: inline-block;
+  background-color: #6698CB;
+  width: 150rpx;
+  text-align: center;
+  color: #fff;
+  z-index: 90;
+}
+
+.content-top__portrait {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:-10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+}
+
 
 .content-top__tips {
   color: #000;
@@ -38,21 +85,6 @@
   top: 60rpx;
 }
 
-.content-top__portrait {
-  position: absolute;
-  top: -50rpx;
-  left: 50%;
-  transform: translate(-50%);
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.portrait {
-  width: 100%;
-  height: 100%;
-}
 
 .content-desc-block {
   margin: 10rpx;
@@ -69,40 +101,5 @@
   width: 600rpx;
 }
 
-.content-desc__img {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  margin-top: 20rpx;
-}
 
-.content-desc__img image {
-  width: 150rpx;
-  height: 150rpx;
-}
 
-.btn {
-  left: 50%;
-  transform: translate(-50%);
-  bottom: 100rpx;
-  position: fixed;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(92, 89, 89);
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
-}
-
-.content-icon {
-  display: flex;
-  padding: 20rpx 50rpx;
-  justify-content: space-between;
-}
-
-.address {
-  width: 50rpx;
-  height: 50rpx;
-}

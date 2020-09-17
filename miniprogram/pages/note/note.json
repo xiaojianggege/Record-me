@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "tab-bar": "../../components/tabBar/tabBar"
+    "tab-bar": "../../components/tabBar/tabBar",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index"
   }
 }

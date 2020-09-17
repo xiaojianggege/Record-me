@@ -70,7 +70,6 @@
   display: flex;
   align-items: center;
 }
-
 .add-wrapper image{
   width: 60rpx;
 }
