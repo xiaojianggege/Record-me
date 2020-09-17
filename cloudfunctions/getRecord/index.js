@@ -5,15 +5,11 @@ cloud.init()
 const db = cloud.database({ env })
 // 云函数入口函数
 exports.main = async (event, context) => {
-  // console.log(event)
-  // console.log(context)
+  console.log(event);
+
   const userInfo = event.userInfo
-  //连通数据库
-  return await db.collection('record').add({
-    data: {
-      content: event.content,
-      createBy: userInfo.openId,
-      createTime: new Date(),
-    } 
-  })
+  //先查询有无该openId
+  return await db.collection('record').where({
+    createBy: userInfo.openId
+  }).get()
 }

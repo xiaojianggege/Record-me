@@ -6,14 +6,14 @@
   <view class="content">
     <view class="content-top">
       <!-- 选择查看的日期 -->
-      <text class="content-top__time" bind:tap="showPopup">{{value}}</text>
+      <text class="content-top__time" bind:tap="showPopup">{{currentTime}}</text>
       <!-- 下方弹出层组件 -->
       <van-popup show="{{ show }}" round position="bottom" custom-style="height: 40%;">
         <!-- 选择日期组件 -->
         <van-datetime-picker type="year-month" value="{{ currentDate }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" bind:input="onInput" bind:confirm="confirm" />
       </van-popup>
       <view class="content-top__portrait">
-        <image class="portrait" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599372006902&di=3ac5eddb2ba2c0f1cf832351d1647564&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn19%2F0%2Fw400h400%2F20180910%2F3391-hiycyfw5413589.jpg"></image>
+        <image class="portrait" src="{{userInfo.avatarUrl}}"></image>
       </view>
       <view class="zhezhao-container">
         <view class="zhezhao"></view>

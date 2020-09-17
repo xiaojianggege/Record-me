@@ -3,7 +3,7 @@
 
 <submit-info
  title="{{title}}"
- bind:submit="commitSuggestion"
+ bind:submit="createRecord"
  showSticky="{{false}}"
  showClamp="{{true}}"
  placeholder="{{placeholder}}"

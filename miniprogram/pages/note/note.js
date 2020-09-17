@@ -1,21 +1,24 @@
 // miniprogram/pages/note/note.js
+const app =  getApp();
+const $util = require('../../common/util')
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    userInfo:{},
     show: false,
     minDate: new Date(2020,8,1).getTime(),
     maxDate: new Date(2025,10,5).getTime(),
     currentDate: new Date(),
-    value: '',
-    formatter(type, value) {
+    currentTime: '',
+    formatter(type, currentTime) {
     if (type === 'year') {
-      return `${value}年`;
+      return `${currentTime}年`;
     } else if (type === 'month') {
-      return `${value}月`;
+      return `${currentTime}月`;
     }
-    return value;
+    return currentTime;
   },
   },
   showPopup() {
@@ -24,28 +27,22 @@ Page({
     })
   },
   confirm(val) {
-    let time = new Date(val.detail)
-    let value = this.formatTime(time)
+    let currentTime = $util.dateFormat("YYYY-mm", new Date(val.detail))
     this.setData({
       show: false,
-      value
+      currentTime
     })
   },
-  // 格式化时间
-  formatTime(val) {
-    let year = val.getFullYear()
-    let month = val.getMonth() + 1
-    if (month >= 1 && month <= 9) { month = `0${month}` }
-    return `${year}-${month}`
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let value = new Date()
-    value = this.formatTime(value)
+    let currentTime = $util.dateFormat("YYYY-mm", new Date())
+    console.log(currentTime);
     this.setData({
-      value
+      currentTime,
+      userInfo:app.globalData.userInfo
     })
   },
 
