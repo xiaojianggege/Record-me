@@ -1,13 +1,17 @@
 <tab-bar title="{{pageTitle}}"></tab-bar>
 <view class="color-envelope">
-    <image src="../../images/color-envelope.png" mode="widthFix"/>
-  </view>
-  <view class="title-wrapper">
-    	<view class="content-top__tips">我的便签</view>
-  </view>
-  
-  <view class="record-wrapper">
-    <record></record>
-  </view>
-<footer-bar />
+	<image src="../../images/color-envelope.png" mode="widthFix" />
+</view>
+<view class="title-wrapper">
+	<view class="content-top__tips">我的便签</view>
+</view>
+
+<view class="record-wrapper">
+	<block wx:for="{{recordContent}}" wx:key="index">
+		<record record="{{item}}"></record>
+
+	</block>
+
+</view>
+<footer-bar/>
 

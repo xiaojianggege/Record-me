@@ -36,7 +36,9 @@ App({
 
     }
   },
+
   globalData: {
-    navId: 1
+    navId: 1,
+    userInfo:{}
   }
 })

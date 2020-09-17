@@ -1,4 +1,4 @@
-// miniprogram/pages/index/index.js
+const $util = require('../../common/util')
 const app = getApp();
 Page({
 
@@ -7,41 +7,26 @@ Page({
    */
   data: {
     pageTitle: '首页',
-    backgroundColor: '#505278'
+    backgroundColor: '#505278',
+    currentTime: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("1111");
-    
-    wx.getUserInfo({
-      success: function(res) {
-        console.log(res);
-        
-        var userInfo = res.userInfo
-        var nickName = userInfo.nickName
-        var avatarUrl = userInfo.avatarUrl
-        var gender = userInfo.gender //性别 0：未知、1：男、2：女
-        var province = userInfo.province
-        var city = userInfo.city
-        var country = userInfo.country
-      }
-    })
-    wx.cloud.callFunction({
-      // 要调用的云函数名称
-      name: 'getUserInfo',
-      // 传递给云函数的event参数
-      data: {
 
-      }
-    }).then(res => {
-      console.log(res);
-      
-    }).catch(err => {
-      // handle error
+    this.getCurrentTime()
+  },
+  getCurrentTime() {
+    this.setData({
+      currentTime: $util.dateFormat("YYYY-mm-dd HH:MM:SS", new Date())
     })
+    let clear = setInterval(() => {
+      this.setData({
+        currentTime: $util.dateFormat("YYYY-mm-dd HH:MM:SS", new Date())
+      })
+    }, 1000)
   },
   gotoNote() {
     app.globalData.navId = 1

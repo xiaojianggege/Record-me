@@ -1,4 +1,4 @@
-  <tab-bar></tab-bar>
+<tab-bar></tab-bar>
 <view class="wrapper">
 	<view class="head">
 		<image class="head-img" src="../../images/note_bg.png" />
@@ -7,7 +7,7 @@
 		<view class="content-top">
 			<text class="content-top__time">2020</text>
 			<view class="content-top__portrait">
-				<image class="portrait" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599372006902&di=3ac5eddb2ba2c0f1cf832351d1647564&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn19%2F0%2Fw400h400%2F20180910%2F3391-hiycyfw5413589.jpg"></image>
+				<image class="portrait" src="{{userInfo.avatarUrl}}"></image>
 			</view>
 			<view class="content-top__tips">
 				来点正式的记录吧
@@ -36,4 +36,5 @@
 
 </view>
 
-<footer-bar />
+<footer-bar/>
+

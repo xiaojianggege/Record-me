@@ -1,4 +1,5 @@
 // miniprogram/pages/personal/personal.js
+const app=getApp()
 Page({
 
   /**
@@ -9,14 +10,17 @@ Page({
     sectionInfo: [
       { iconUrl: '../../images/意见建议 (1).png', title: '意见建议'},
       { iconUrl: '../../images/问题反馈.png', title: '问题反馈'}
-    ]
+    ],
+    userInfo:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      userInfo:app.globalData.userInfo
+    })
   },
   gotoSuggestion(){
     wx.navigateTo({

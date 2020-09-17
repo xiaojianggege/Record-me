@@ -22,7 +22,7 @@
 				<swiper-item class="slogan">海阔凭鱼跃，天高任鸟飞</swiper-item>
 			</swiper>
 			<view class="showTime">
-				<text>2020-08-22 20：22</text>
+				<text>{{currentTime}}</text>
 			</view>
 		</view>
 		<!-- 两个按钮 -->
