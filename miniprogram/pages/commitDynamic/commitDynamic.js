@@ -2,7 +2,6 @@
 const $util = require('../../common/util')
 const app = getApp();
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
-// import Toast from '../../miniprogram_npm/@vant/weapp/dist/toast/toast';
 Page({
 
   /**
@@ -17,7 +16,8 @@ Page({
     fileID: [],
     content: '',
     show: false,
-    remind: true
+    remind: true,
+    message:''
   },
   onConfirm() {
     wx.navigateBack({
@@ -34,6 +34,7 @@ Page({
   cancel() {
     if (this.data.content.length > 0 || this.data.tempFilePaths.length > 0) { //用户有输入 
       this.setData({
+        message:'请注意，当前正在编辑的内容将会清空',
         show: true
       })
     } else {  //直接返回 

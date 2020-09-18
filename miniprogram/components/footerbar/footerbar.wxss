@@ -25,16 +25,16 @@
   flex-direction: column;
   align-items: center;
 }
-.item text{
+.item-text{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24rpx;
   margin-top: 10rpx;
   color: #626370;
 }
-.item image{
+.item-image{
   width: 40rpx;
 }
-.item.index image{
+.item-index-image{
   width: 80rpx;
 }
 
@@ -70,9 +70,9 @@
   display: flex;
   align-items: center;
 }
-.add-wrapper image{
+.add-wrapper-image{
   width: 60rpx;
 }
-.active text{
+.active-text{
   color:#4792E6;
 }

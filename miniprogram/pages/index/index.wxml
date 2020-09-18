@@ -43,7 +43,7 @@
 				<view class="line"></view>
 				<view class="button-pad">
 					<view class="button" bindtap="gotoNote">
-            <image src="../../images/note(2).png" />
+						<image src="../../images/note(2).png" />
 					</view>
 				</view>
 			</view>

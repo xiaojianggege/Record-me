@@ -30,7 +30,6 @@
 				 min-date="{{ minDate }}"
 				 max-date="{{ maxDate }}"
 				 formatter="{{ formatter }}"
-				 bind:input="onInput"
 				 bind:confirm="confirm"
 				 bind:cancel="cancel"
 				/>

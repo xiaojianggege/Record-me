@@ -26,7 +26,6 @@
 .btn{
   width: 25rpx;
 }
-.icon image,
-.btn image{
+.icon-image{
   width: 100%;
 }

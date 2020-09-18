@@ -47,7 +47,6 @@ Page({
     let nowYear = $util.dateFormat("YYYY", new Date())
     let nowMonth = $util.dateFormat("mm", new Date()) - 1
     let nowDay = $util.dateFormat("dd", new Date())
-    console.log(nowYear, nowMonth);
     let currentTime = $util.dateFormat("YYYY-mm", new Date())
     this.setData({
       currentTime,
@@ -75,6 +74,13 @@ Page({
     wx.cloud.callFunction({
       name: 'getNote',
       success(res) {
+        if (res.result.data.length == 0) {
+          that.setData({
+            noteContent: [{ content: '当前还没有动态哦！点击下方加号创建自己的第一条动态',createTime:$util.dateFormat("YYYY-mm-dd HH:MM", new Date())}]
+          })
+          
+          return
+        };
         that.setData({
           noteContent: res.result.data.reverse()
         })
@@ -91,6 +97,7 @@ Page({
       }
     })
   },
+
   /**
    * 生命周期函数--监听页面隐藏
    */

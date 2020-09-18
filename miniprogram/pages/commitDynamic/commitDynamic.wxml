@@ -2,7 +2,7 @@
 <tab-bar title="{{pageTitle}}"></tab-bar>
 <view class="wrapper">
 	<van-dialog
-	 message="请注意，当前正在编辑的内容将会清空"
+	 message="{{message}}"
 	 title="确定返回？"
 	 show="{{ show }}"
 	 show-cancel-button

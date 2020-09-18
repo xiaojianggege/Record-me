@@ -22,18 +22,24 @@
 	</view>
 	<view class="sticky" wx:if="{{showSticky}}">
 		<image
+		 class="sticky-image"
 		 src="../../images/nail.png"
 		 alt=""
 		 mode="widthFix"
 		/>
 		<image
+		 class="sticky-image"
 		 src="../../images/nail.png"
 		 alt=""
 		 mode="widthFix"
 		/>
 	</view>
 	<view class="clamp" wx:if="{{showClamp}}">
-		<image src="../../images/clamp.png" mode="widthFix" />
+		<image
+		 class="clamp-image"
+		 src="../../images/clamp.png"
+		 mode="widthFix"
+		/>
 	</view>
 </view>
 

@@ -12,7 +12,7 @@
   letter-spacing: 3rpx;
   color: #fff;
 }
-.content image{
+.content-img{
   width: 35rpx;
   height: 35rpx;
   margin:0 10rpx 0 10rpx;

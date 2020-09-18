@@ -17,12 +17,12 @@
   margin: 20rpx 20rpx;
   line-height: 0;
 }
-.time-wrapper image{
+.time-wrapper-mage{
   width: 40rpx;
   vertical-align: middle;
   margin-right: 10rpx;
 }
-.time-wrapper text{
+.time-wrapper-text{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 28rpx;
   vertical-align: middle;
@@ -44,6 +44,6 @@
   display: flex;
   justify-content: space-between;
 }
-.clip image{
+.clip-image{
   width: 50rpx;
 }

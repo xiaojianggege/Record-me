@@ -1,4 +1,5 @@
 // components/showNote/showNote.js
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Component({
   /**
    * 组件的属性列表
@@ -20,12 +21,12 @@ Component({
    */
   data: {
     month: '',
-    day: ''
+    day: '',
   },
   lifetimes: {
     attached: function () {
       this.setData({
-        month:this.data.createTime.substring(5,7),
+        month:this.data.createTime.substring(5,7)+'月',
         day:this.data.createTime.substring(8,10)
       })
     }
@@ -34,6 +35,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onClick() {
+      console.log('kkk');
+      this.setData({
+        show:true
+      })
+    },
   }
 })
