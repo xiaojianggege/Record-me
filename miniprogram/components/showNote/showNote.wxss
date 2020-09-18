@@ -39,7 +39,7 @@
   height: 80rpx;
   background-color: #fff;
   position: absolute;
-  left: 100rpx;
+  left: 102rpx;
   display: flex;
   align-items: center;
   justify-content: center;

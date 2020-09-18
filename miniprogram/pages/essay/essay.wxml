@@ -1,7 +1,7 @@
 <!--miniprogram/pages/essay/essay.wxml-->
 <tab-bar title="{{pageTitle}}"></tab-bar>
 
-<submit-info
+<!-- <submit-info
  title="{{title}}"
  bind:submit="createRecord"
  showSticky="{{false}}"
@@ -9,5 +9,44 @@
  placeholder="{{placeholder}}"
 ></submit-info>
 <load remind="{{remind}}"></load>
-<van-toast id="van-toast" />
+<van-toast id="van-toast" /> -->
+<view class="container">
+	<view class="toast">
+		涂涂改改
+	</view> 
+  <view class="title">
+    <input type="text" placeholder="有标题吗" />
+  </view>
+	<view class="section">
+    <textarea
+      maxlength="-1"
+      class="content"
+      placeholder="随便记些什么吧"
+      name="name"
+      bindinput="contentInput"
+    ></textarea>
+
+    <view class="tag">
+      <van-dropdown-menu>
+        <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" title="{{ itemTitle }}" bind:change="onSwitch1Change" />
+        <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="onSwitch2Change"/>
+      </van-dropdown-menu>
+    </view>
+    <view class="expressionIcon">
+      <image wx:if="{{value2 === 'a'}}" src="../../images/happy.png" mode="widthFix"/>
+      <image wx:elif="{{value2 === 'b'}}" src="../../images/boring.png" mode="widthFix"/>
+      <image wx:else src="../../images/sad.png" mode="widthFix"/>
+    </view>
+	</view>
+	<view class="clamp">
+		<image src="../../images/clamp.png" mode="widthFix" />
+  </view>
+
+  <!-- 保存和取消按钮 -->
+  <view class="btn-wrapper">
+  <view class="btn" bind:tap="cancel">取消</view>
+  <view class="btn" bind:tap="commitNote">保存</view>
+</view>
+</view>
+
 
