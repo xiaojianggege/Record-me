@@ -10,7 +10,7 @@ Component({
     },
     backgroundColor: {
       type: String,
-      value: '#6698CB'
+      value: 'rgb(71, 146, 230)'
     }
    
   },

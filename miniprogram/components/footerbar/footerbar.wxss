@@ -74,5 +74,5 @@
   width: 60rpx;
 }
 .active text{
-  color:#6698CB;
+  color:#4792E6;
 }

@@ -4,7 +4,7 @@
 <view class="container">
 	<view class="bg-image">
 		<image
-		 src="../../images/index-background.gif"
+		 src="../../images/index-background.jpg"
 		 alt=""
 		 mode="widthFix"
 		/>
@@ -43,7 +43,7 @@
 				<view class="line"></view>
 				<view class="button-pad">
 					<view class="button" bindtap="gotoNote">
-						<icon class="iconfont icon-record" />
+            <image src="../../images/note(2).png" />
 					</view>
 				</view>
 			</view>
@@ -51,7 +51,7 @@
 				<view class="line"></view>
 				<view class="button-pad">
 					<view class="button" bindtap="gotoRecord">
-						<image src="../../images/note(3).png" alt="" />
+						<image src="../../images/record(2).png" alt="" />
 					</view>
 				</view>
 			</view>

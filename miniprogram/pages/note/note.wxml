@@ -2,13 +2,20 @@
 
 <view class="wrapper">
 	<view class="head">
-		<image class="head-img" src="../../images/note_bg_.gif" />
+		<image class="head-img" src="../../images/note_bg_nv.gif" />
 	</view>
 	<view class="content">
-
 		<view class="content-top">
+			<text class="content-top__name">{{userInfo.nickName}}</text>
+			<view class="content-top__portrait">
+				<image class="portrait" src="{{userInfo.avatarUrl}}"></image>
+			</view>
+
+		</view>
+
+		<view class="content-top__time">
 			<!-- 选择查看的日期 -->
-			<text class="content-top__time" bind:tap="showPopup">{{currentTime}}</text>
+			<text bind:tap="showPopup">{{currentTime}}</text>
 			<!-- 下方弹出层组件 -->
 			<van-popup
 			 show="{{ show }}"
@@ -28,13 +35,6 @@
 				 bind:cancel="cancel"
 				/>
 			</van-popup>
-			<view class="content-top__portrait">
-				<image class="portrait" src="{{userInfo.avatarUrl}}"></image>
-			</view>
-			<view class="zhezhao-container">
-				<view class="zhezhao"></view>
-			</view>
-			<text class="content-top__name">{{userInfo.nickName}}</text>
 		</view>
 
 		<view class="content-main">
