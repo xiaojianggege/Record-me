@@ -9,9 +9,10 @@
 	</view>
 	<view class="record-wrapper">
 		<load remind="{{remind}}"></load>
-		<block wx:for="{{recordContent}}" wx:key="index">
-			<record record="{{item}}"></record>
-		</block>
+		<!-- <block wx:for="{{recordContent}}" wx:key="index">
+			
+    </block> -->
+    <record></record>
 	</view>
 	<!-- 占位块 -->
 	<view class="block-space"></view>

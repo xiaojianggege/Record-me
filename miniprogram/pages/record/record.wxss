@@ -27,7 +27,7 @@
   box-shadow: 0 4rpx 3rpx gray;
 }
 .record-wrapper{
-  margin-top: 40rpx;
+  margin: 40rpx 20rpx 0;
 }
 .block-space{
   height: 180rpx;

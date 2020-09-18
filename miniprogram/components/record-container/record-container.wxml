@@ -1,29 +1,17 @@
 <!-- components/record-container/record-container.wxml -->
 <view class="container">
-	<view class="container-content">
-		<view class="time-wrapper">
-			<image
-			 class="time-wrapper-mage"
-			 src="../../images/time.png"
-			 mode="widthFix"
-			/>
-			<text class="time-wrapper-text">{{record.createTime}}</text>
-		</view>
-		<view class="content-wrapper">
-			<text class="" space='nbsp' decode>{{record.content}}</text>
-		</view>
-		<view class="clip">
-			<image
-			 class="clip-image"
-			 src="../../images/clamp.png"
-			 mode="widthFix"
-			/>
-			<image
-			 class="clip-image"
-			 src="../../images/clamp.png"
-			 mode="widthFix"
-			/>
-		</view>
-	</view>
+  <view class="header">
+    <view class="time">19:26</view>
+    <view>
+      <image class="expression" wx:if="{{a === 'happy'}}" src="../../images/happy.png" mode="widthFix"/>
+      <image class="expression" wx:elif="{{a === 'boring'}}" src="../../images/boring.png" mode="widthFix"/>
+      <image class="expression" wx:else="{{a === 'sad'}}" src="../../images/sad.png" mode="widthFix"/>
+    </view>
+  </view>
+  <view class="content">
+    <view class="title">电话费点附近开房</view>
+    <view class="content-main">登记反馈京东方等级分开登记反馈代付款康复科</view>
+  </view>
+  <view class="tag">学习tag</view>
 </view>
 

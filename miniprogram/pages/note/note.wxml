@@ -52,6 +52,6 @@
 </view>
 
 <!-- 站位块 -->
-<view class="block-space" style="height: 130rpx"></view>
+<view class="block-space" style="height: 240rpx"></view>
 <footer-bar/>
 
