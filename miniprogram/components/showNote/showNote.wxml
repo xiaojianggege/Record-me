@@ -8,6 +8,7 @@
 		<view class="item-content__text">{{content}}</view>
 		<view class="item-content__pic">
 			<block wx:for="{{imgs}}" wx:key="index">
+
 				<image src="{{item}}" />
 			</block>
 		</view>
