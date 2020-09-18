@@ -14,7 +14,6 @@ App({
         } else {
           wx.user.navBarHeight = 44
         }
-        console.log(wx.user.navBarHeight)
       },
     });
 

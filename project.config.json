@@ -25,7 +25,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"appid": "wx3078301efc6121b7",
@@ -212,8 +212,15 @@
 				},
 				{
 					"id": -1,
-					"name": "components/showNote/showNote",
-					"pathName": "components/showNote/showNote",
+					"name": "pages/commitDynamic/commitDynamic",
+					"pathName": "pages/commitDynamic/commitDynamic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/commitDynamic/commitDynamic",
+					"pathName": "pages/commitDynamic/commitDynamic",
 					"scene": null
 				}
 			]

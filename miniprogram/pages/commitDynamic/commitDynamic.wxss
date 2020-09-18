@@ -6,6 +6,7 @@
   height: 100vh;
   background-color: #F5FAFE;
 }
+
 .header-content{
   width: 94%;
   margin: 0 auto;

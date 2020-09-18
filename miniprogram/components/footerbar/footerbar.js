@@ -26,38 +26,42 @@ Component({
    */
   methods: {
     gotoIndex() {
+      if (app.globalData.navId == 0) return
       app.globalData.navId = 0
       wx.redirectTo({
         url: '/pages/index/index'
       })
     },
     gotoNote() {
+      if (app.globalData.navId == 1) return
       app.globalData.navId = 1
       wx.redirectTo({
         url: '/pages/note/note'
       })
     },
     gotoRecord() {
+      if (app.globalData.navId == 2) return
       app.globalData.navId = 2
       wx.redirectTo({
         url: '/pages/record/record'
       })
     },
     gotoPersonal() {
+      if (app.globalData.navId == 3) return
       app.globalData.navId = 3
       wx.redirectTo({
         url: '/pages/personal/personal'
       })
     },
-    gotoAdd(){
-      if(app.globalData.navId==2){
+    gotoAdd() {
+      if (app.globalData.navId == 2) {
         wx.navigateTo({
           url: '/pages/essay/essay',
         })
-      }else{
+      } else {
         wx.navigateTo({
           url: '/pages/commitDynamic/commitDynamic',
-        }) 
+        })
       }
     }
   }

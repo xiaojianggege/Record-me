@@ -1,7 +1,8 @@
 <tab-bar></tab-bar>
+
 <view class="wrapper">
   <view class="head">
-    <image class="head-img" src="../../images/note_bg.png" />
+    <image class="head-img" src="../../images/note_bg_.gif" />
   </view>
   <view class="content">
     <view class="content-top">
@@ -32,4 +33,5 @@
 
 <!-- 站位块 -->
 <view class="block-space" style="height: 130rpx"></view>
-<footer-bar />
+<footer-bar/>
+
