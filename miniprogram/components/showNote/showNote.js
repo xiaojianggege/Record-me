@@ -1,5 +1,4 @@
-// components/showNote/showNote.js
-import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
+
 Component({
   /**
    * 组件的属性列表
@@ -36,10 +35,7 @@ Component({
    */
   methods: {
     onClick() {
-      console.log('kkk');
-      this.setData({
-        show:true
-      })
+      this.triggerEvent('deleteNote')  //抛出方法
     },
   }
 })

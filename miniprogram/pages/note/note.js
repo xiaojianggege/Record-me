@@ -1,4 +1,4 @@
-// miniprogram/pages/note/note.js
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 const app = getApp();
 const $util = require('../../common/util')
 Page({
@@ -14,6 +14,8 @@ Page({
     currentTime: '',
     noteContent: [],
     remind: true,
+    dialogShow: false,
+    deleteId: '',
     formatter(type, currentTime) {
       if (type === 'year') {
         return `${currentTime}年`;
@@ -40,14 +42,55 @@ Page({
       show: false
     })
   },
+  deleteNote(e) {
+    this.setData({
+      dialogShow: true,
+      deleteId: e.currentTarget.dataset.id
+    })
+  },
+  onClose() {
+    this.setData({
+      dialogShow: false,
+      deleteId: ''
+    })
+  },
+  onConfirm() {   //确定删除
+    this.setData({
+      remind: true
+    })
+    console.log(this.data.deleteId);
+    wx.cloud.callFunction({
+      name: 'deleteNote',
+      data: {
+        id: this.data.deleteId
+      },
+      success(res) {
+        console.log(res);
+      },
+      fail(err) {
+        console.log(err)
+      },
+      complete: () => {
+        this.onLoad()
+        setTimeout(() => {
+          this.setData({
+            remind: false
+          })
+        }, 500)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
+  // YYYY-mm-dd HH:MM
   onLoad: function (options) {
-    let nowYear = $util.dateFormat("YYYY", new Date())
-    let nowMonth = $util.dateFormat("mm", new Date()) - 1
-    let nowDay = $util.dateFormat("dd", new Date())
-    let currentTime = $util.dateFormat("YYYY-mm", new Date())
+    this.getNote()
+    let time=$util.dateFormat("YYYY-mm-dd", new Date())
+    let currentTime =time.substring(0,7)
+    let nowYear = time.substring(0,4)
+    let nowMonth = time.substring(5,7)
+    let nowDay =time.substring(8,10)
     this.setData({
       currentTime,
       userInfo: app.globalData.userInfo,
@@ -66,7 +109,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getNote()
+
   },
   getNote() {
     const that = this
@@ -76,9 +119,8 @@ Page({
       success(res) {
         if (res.result.data.length == 0) {
           that.setData({
-            noteContent: [{ content: '当前还没有动态哦！点击下方加号创建自己的第一条动态',createTime:$util.dateFormat("YYYY-mm-dd HH:MM", new Date())}]
+            noteContent: [{ content: '当前还没有动态哦！点击下方加号创建自己的第一条动态', createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()) }]
           })
-          
           return
         };
         that.setData({

@@ -16,26 +16,28 @@ Page({
       { text: '学习tag', value: '学习tag' },
       { text: '工作tag', value: '工作tag' },
     ],
-    value1: '生活tag',
+    state: '生活tag',
     option2: [
-      { text: '心情不错', value: 'a' },
-      { text: '有点无聊', value: 'b' },
-      { text: '真的难受', value: 'c' },
+      { text: '心情不错', value: 'happy' },
+      { text: '有点无聊', value: 'boring' },
+      { text: '真的难受', value: 'sad' },
     ],
-    value2: 'a',
+    mood: 'happy',
+    noteTitle: '',
+    noteContent: ''
   },
   onSwitch1Change(e) {
-    let value1 = e.detail
+    let state = e.detail
     this.setData({
-      value1
+      state
     })
-    console.log(this.data.value1)
+    console.log(this.data.state)
   },
   onSwitch2Change(e) {
     this.setData({
-      value2: e.detail
+      mood: e.detail
     })
-    console.log(this.data.value2)
+    console.log(this.data.mood)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -45,10 +47,22 @@ Page({
       this.setData({
         remind: false
       })
-    }, 500)
+    }, 1500)
+  },
+  titleInput(e) {
+    console.log(e.detail.value);
+    this.setData({
+      noteTitle: e.detail.value
+    })
+  },
+  contentInput(e) {
+    console.log(e.detail.value);
+    this.setData({
+      titleContent: e.detail.value
+    })
   },
   createRecord(e) {
-    const that=this
+    const that = this
     if (e.detail.content.length <= 0) {
       Toast('不能为空哦！')
       return
@@ -80,6 +94,7 @@ Page({
       }
     })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
