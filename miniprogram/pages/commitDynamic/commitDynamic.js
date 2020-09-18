@@ -87,21 +87,27 @@ Page({
         wx.cloud.uploadFile({
           cloudPath,//云存储图片名字
           filePath: tempFilePaths[i],//临时路径
-        }).then(res => {
-          let fileID = that.data.fileID
-          fileID.push(res.fileID)
-          that.setData({ //云存储图片路径,可以把这个路径存到集合，要用的时候再取出来
-            fileID
-          });
-          if (i === tempFilePaths.length - 1) {
-            console.log(tempFilePaths.length);
-            console.log(fileID);
-            console.log('执行',i);
-            wx.hideLoading()
-            that.createNote()
+          success: (res) => {
+            let fileID = that.data.fileID
+            console.log(res);
+            fileID.push(res.fileID)
+            that.setData({ //云存储图片路径,可以把这个路径存到集合，要用的时候再取出来
+              fileID
+            });
+          }, fail: (err) => {
+            console.log(err);
+          }, complete: () => {
+            if (i === tempFilePaths.length - 1) {
+              console.log(tempFilePaths.length);
+              console.log(this.data.fileID);
+              console.log('执行', i);
+           
+              setTimeout(()=>{
+                wx.hideLoading()
+                that.createNote()
+              },500)
+            }
           }
-        }).catch(err => {
-          console.log(err);
         })
       }
     } else {
