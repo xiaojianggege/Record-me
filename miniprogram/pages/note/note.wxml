@@ -2,7 +2,7 @@
 
 <view class="wrapper">
 	<view class="head">
-		<image class="head-img" src="../../images/note_bg_nv.gif" />
+		<image class="head-img" src="../../images/note_bg_.gif" />
 	</view>
 	<view class="content">
 		<view class="content-top">

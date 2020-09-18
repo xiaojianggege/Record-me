@@ -8,8 +8,8 @@ Page({
   data: {
     userInfo: {},
     show: false,
-    minDate: new Date(2020, 8, 1).getTime(),
-    maxDate: new Date(2025, 10, 5).getTime(),
+    minDate: new Date(2020, 7, 1).getTime(),
+    maxDate: undefined,
     currentDate: new Date(),
     currentTime: '',
     noteContent: [],
@@ -44,10 +44,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let nowYear = $util.dateFormat("YYYY", new Date())
+    let nowMonth = $util.dateFormat("mm", new Date()) - 1
+    let nowDay = $util.dateFormat("dd", new Date())
+    console.log(nowYear, nowMonth);
     let currentTime = $util.dateFormat("YYYY-mm", new Date())
     this.setData({
       currentTime,
-      userInfo: app.globalData.userInfo
+      userInfo: app.globalData.userInfo,
+      maxDate: new Date(nowYear, nowMonth, nowDay).getTime()
     })
   },
 
