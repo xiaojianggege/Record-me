@@ -207,6 +207,13 @@
 					"id": -1,
 					"name": "pages/commitDynamic/commitDynamic",
 					"pathName": "pages/commitDynamic/commitDynamic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "components/showNote/showNote",
+					"pathName": "components/showNote/showNote",
 					"scene": null
 				}
 			]

@@ -4,6 +4,7 @@
     "pages/record/record",
     "components/personalSection/personalSetion",
     "components/tabBar/tabBar",
+    "components/showNote/showNote",
     "components/submit-information/submit-information",
     "components/record-container/record-container",
     "components/footerbar/footerbar",

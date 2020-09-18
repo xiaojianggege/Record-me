@@ -20,9 +20,15 @@
       </view>
       <text class="content-top__name">{{userInfo.nickName}}</text>
     </view>
+
+    <view class="content-main">
+      <show-note></show-note>
+    </view>
   </view>
-  <view class="content-top__tips">来点正式的记录吧</view>
+  
 </view>
+
+
 
 <!-- 站位块 -->
 <view class="block-space" style="height: 130rpx"></view>

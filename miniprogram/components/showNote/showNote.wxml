@@ -1,0 +1,25 @@
+
+<view class="container">
+  <view class="item-time">
+    <text>08月</text>
+    <text class="day">22</text>
+  </view>
+
+  <view class="item-content">
+    <view class="item-content__text">杜甫飞度覅大幅对付福地福地福福地艾欧娜丢发度覅度覅a防抖电放费度覅度覅郭德纲</view>
+    <view class="item-content__pic">
+      <image src="../../images/Hot-air-balloon.png" />
+      <image src="../../images/Hot-air-balloon.png" />
+      <image src="../../images/Hot-air-balloon.png" />
+    </view>
+    <view class="adress">
+      <image src="../../images/adress.png" mode="widthFix"/>
+    </view>    
+  </view>
+
+  <view class="sign">
+    <image src="../../images/round.png" mode="widthFix"/>
+    <text></text>
+  </view>
+</view>
+
