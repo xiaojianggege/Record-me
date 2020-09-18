@@ -31,7 +31,7 @@
   height: 160rpx;
   background-color: #fff;
   border-radius: 20rpx;
-  box-shadow: 0 0 20rpx #999;
+  box-shadow: 0 0 10rpx rgb(54, 46, 48);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,6 +72,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 20rpx #999;
 }
 .button image{
   width: 40rpx;

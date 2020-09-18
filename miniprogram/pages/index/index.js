@@ -7,7 +7,7 @@ Page({
    */
   data: {
     pageTitle: '首页',
-    backgroundColor: '#505278',
+    backgroundColor: '#6A5D6F',
     currentTime: '',
     sloganList: [
       '海阔凭鱼跃，天高任鸟飞',

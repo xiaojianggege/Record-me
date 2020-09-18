@@ -12,9 +12,9 @@
       <image src="../../images/Hot-air-balloon.png" />
       <image src="../../images/Hot-air-balloon.png" />
     </view>
-    <view class="adress">
+    <!-- <view class="adress">
       <image src="../../images/adress.png" mode="widthFix"/>
-    </view>    
+    </view>     -->
   </view>
 
   <view class="sign">
