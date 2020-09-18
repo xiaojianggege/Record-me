@@ -1,25 +1,27 @@
 // miniprogram/pages/note/note.js
-const app =  getApp();
+const app = getApp();
 const $util = require('../../common/util')
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:{},
+    userInfo: {},
     show: false,
-    minDate: new Date(2020,8,1).getTime(),
-    maxDate: new Date(2025,10,5).getTime(),
+    minDate: new Date(2020, 8, 1).getTime(),
+    maxDate: new Date(2025, 10, 5).getTime(),
     currentDate: new Date(),
     currentTime: '',
+    noteContent: [],
+    remind: true,
     formatter(type, currentTime) {
-    if (type === 'year') {
-      return `${currentTime}年`;
-    } else if (type === 'month') {
-      return `${currentTime}月`;
-    }
-    return currentTime;
-  },
+      if (type === 'year') {
+        return `${currentTime}年`;
+      } else if (type === 'month') {
+        return `${currentTime}月`;
+      }
+      return currentTime;
+    },
   },
   showPopup() {
     this.setData({
@@ -45,7 +47,7 @@ Page({
     let currentTime = $util.dateFormat("YYYY-mm", new Date())
     this.setData({
       currentTime,
-      userInfo:app.globalData.userInfo
+      userInfo: app.globalData.userInfo
     })
   },
 
@@ -60,9 +62,30 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getNote()
   },
-
+  getNote() {
+    const that = this
+    //调用云函数
+    wx.cloud.callFunction({
+      name: 'getNote',
+      success(res) {
+        that.setData({
+          noteContent: res.result.data.reverse()
+        })
+      },
+      fail(err) {
+        console.log(err)
+      },
+      complete: () => {
+        setTimeout(() => {
+          this.setData({
+            remind: false
+          })
+        }, 500)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

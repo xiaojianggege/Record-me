@@ -8,4 +8,6 @@
  showClamp="{{true}}"
  placeholder="{{placeholder}}"
 ></submit-info>
+<load remind="{{remind}}"></load>
+<van-toast id="van-toast" />
 

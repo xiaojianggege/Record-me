@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-toast": "@vant/weapp/toast/index",
+    "load":"../../components/load/load"
+
+  }
 }

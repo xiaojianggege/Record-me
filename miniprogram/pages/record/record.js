@@ -23,10 +23,9 @@ Page({
       name: 'getRecord',
       success(res) {
         that.setData({
-          recordContent: res.result.data
+          recordContent: res.result.data.reverse()
         })
         console.log(res)
-        // Notify({ type: 'primary', message: '创建成功', duration: 1500, selector: '#notify-selector', background: '#28a745' });
       },
       fail(err) {
         console.log(err)

@@ -1,5 +1,6 @@
 // miniprogram/pages/essay/essay.js
-const $util=require('../../common/util')
+const $util = require('../../common/util')
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
 
   /**
@@ -8,16 +9,29 @@ Page({
   data: {
     title: '涂涂改改',
     placeholder: '就写这吧',
-    pageTitle: '便签'
+    pageTitle: '便签',
+    remind: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    setTimeout(() => {
+      this.setData({
+        remind: false
+      })
+    }, 500)
   },
   createRecord(e) {
+    const that=this
+    if (e.detail.content.length <= 0) {
+      Toast('不能为空哦！')
+      return
+    }
+    that.setData({
+      remind: true
+    })
     let createTime = $util.dateFormat("YYYY-mm-dd HH:MM", new Date())
     //调用云函数
     wx.cloud.callFunction({
@@ -27,13 +41,15 @@ Page({
         createTime
       },
       success(res) {
-        console.log(res)
-        // Notify({ type: 'primary', message: '创建成功', duration: 1500, selector: '#notify-selector', background: '#28a745' });
+        that.setData({
+          remind: false
+        })
         setTimeout(() => {
           wx.redirectTo({
             url: '/pages/record/record'
           })
-        }, 2000);
+        }, 50);
+
       },
       fail(err) {
         console.log(err)

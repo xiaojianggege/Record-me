@@ -17,17 +17,15 @@ Page({
     fileID: [],
     content: '',
     show: false,
-    remind:true
+    remind: true
   },
   onConfirm() {
-    console.log('确定');
     wx.navigateBack({
       delta: 1, // 回退前 delta(默认为1) 页面
     })
   },
 
   onClose() {
-    console.log('取消');
     this.setData({
       show: false
     })
@@ -75,42 +73,41 @@ Page({
       Toast('不能为空哦！')
       return
     }
-
     wx.showLoading({
       title: '发布中',
     });
     this.setData({
-      remind:true
-      })
+      remind: true
+    })
     // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
     let tempFilePaths = that.data.tempFilePaths
-    for (let i = 0; i < tempFilePaths.length; i++) {
-      const cloudPath = parseInt(Math.floor(Math.random() * (9999 - 1000 + 1) + 100), 10) + "" + new Date().getTime() + tempFilePaths[i].match(/\.[^.]+?$/)
-      wx.cloud.uploadFile({
-        cloudPath,//云存储图片名字
-        filePath: tempFilePaths[i],//临时路径
-        success(res) {
-          console.log(1);
+    if (tempFilePaths.length > 0) {
+      for (let i = 0; i < tempFilePaths.length; i++) {
+        const cloudPath = parseInt(Math.floor(Math.random() * (9999 - 1000 + 1) + 100), 10) + "" + new Date().getTime() + tempFilePaths[i].match(/\.[^.]+?$/)
+        wx.cloud.uploadFile({
+          cloudPath,//云存储图片名字
+          filePath: tempFilePaths[i],//临时路径
+        }).then(res => {
           let fileID = that.data.fileID
-          console.log(2);
           fileID.push(res.fileID)
-          console.log(3);
           that.setData({ //云存储图片路径,可以把这个路径存到集合，要用的时候再取出来
-            fileID         
+            fileID
           });
-          console.log(4);
-          console.log(that.data.fileID);
-        },
-        fail: e => {
-          console.error('[上传图片] 失败：', e)
-        },
-        complete: () => {
-          wx.hideLoading()
-          that.createNote()
-        }
-      });
+          if (i === tempFilePaths.length - 1) {
+            console.log(tempFilePaths.length);
+            console.log(fileID);
+            console.log('执行',i);
+            wx.hideLoading()
+            that.createNote()
+          }
+        }).catch(err => {
+          console.log(err);
+        })
+      }
+    } else {
+      wx.hideLoading()
+      that.createNote()
     }
-
   },
   createNote() {
     wx.showLoading({
@@ -118,7 +115,7 @@ Page({
     });
     let createTime = $util.dateFormat("YYYY-mm-dd HH:MM", new Date())
     //调用云函数
-    console.log(this.data.fileID);
+    // console.log(this.data.fileID);
 
     wx.cloud.callFunction({
       name: 'createNote',
@@ -129,21 +126,20 @@ Page({
         updateTime: createTime
       },
       success(res) {
-        console.log(res)
-
+        // console.log(res)
         setTimeout(() => {
           wx.redirectTo({
             url: '/pages/note/note'
           })
-        }, 500);
+        }, 50);
       },
       fail(err) {
         console.log(err)
       },
       complete: () => {
         this.setData({
-          remind:false
-          })
+          remind: false
+        })
         wx.hideLoading()
       }
     })
@@ -171,11 +167,11 @@ Page({
       currentTime: $util.dateFormat('HH:MM', new Date()),
       userInfo: app.globalData.userInfo
     })
-    setTimeout(()=>{
+    setTimeout(() => {
       this.setData({
-      remind:false
+        remind: false
       })
-    },1000)
+    }, 500)
   },
 
   /**
