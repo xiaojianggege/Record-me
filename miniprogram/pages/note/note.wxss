@@ -26,6 +26,7 @@
 }
 .content-top__time{
   background-color: #fff;
+  margin-bottom: 36rpx;
   padding: 26rpx; 
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
@@ -39,6 +40,7 @@
   text-align: center;
   color: #fff;
   z-index: 90;
+ 
 }
 .content-top__portrait {
   position: absolute;

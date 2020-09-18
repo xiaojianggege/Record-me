@@ -10,9 +10,33 @@ Page({
     title: '涂涂改改',
     placeholder: '就写这吧',
     pageTitle: '便签',
-    remind: true
+    remind: true,
+    option1: [
+      { text: '生活tag', value: '生活tag' },
+      { text: '学习tag', value: '学习tag' },
+      { text: '工作tag', value: '工作tag' },
+    ],
+    value1: '生活tag',
+    option2: [
+      { text: '心情不错', value: 'a' },
+      { text: '有点无聊', value: 'b' },
+      { text: '真的难受', value: 'c' },
+    ],
+    value2: 'a',
   },
-
+  onSwitch1Change(e) {
+    let value1 = e.detail
+    this.setData({
+      value1
+    })
+    console.log(this.data.value1)
+  },
+  onSwitch2Change(e) {
+    this.setData({
+      value2: e.detail
+    })
+    console.log(this.data.value2)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
