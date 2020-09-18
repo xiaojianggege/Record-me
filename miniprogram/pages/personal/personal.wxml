@@ -7,7 +7,7 @@
 		</view>
 	</view>
 
-	<view class="banner-news">一共记录了xx张便签</view>
+	<view class="banner-news">{{userInfo.nickName}}</view>
 	<!-- 组件 -->
 	<block wx:for="{{sectionInfo}}" wx:key="item">
 		<personalSection
