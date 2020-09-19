@@ -44,13 +44,14 @@
   width: 100%;
 }
 .user-info .user_name{
-  font-size: 26rpx;
+  font-size: 28rpx;
+  font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
 }
 .content{
   margin: 16rpx 8rpx 0;
   width: 100%;
-  font-size: 26rpx;
+  font-size: 28rpx;
   font-family: Arial, Helvetica, sans-serif;
 }
 

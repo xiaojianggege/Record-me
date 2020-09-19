@@ -1,4 +1,4 @@
-<tab-bar></tab-bar>
+<tab-bar title="{{pagetitle}}"></tab-bar>
 <van-dialog
  message="{{message}}"
  title="确定删除？"

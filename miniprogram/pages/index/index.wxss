@@ -1,5 +1,14 @@
 /* miniprogram/pages/index/index.wxss */
 @import '../../assets/fonts/iconfont.wxss';
+.block{
+  position: fixed;
+  top: 0;
+  font-size: 30rpx;
+  width: 100%;
+  color: #fff;
+  padding: 70rpx 0rpx 0 40rpx;
+  letter-spacing: 4rpx;
+}
 .bg-image{
   position: fixed;
   top: 0;

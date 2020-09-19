@@ -21,8 +21,12 @@
 .banner-news{
   margin: -30rpx auto 0;
   padding: 20rpx 10rpx;
+  max-width: 300rpx;
   font-size: 29rpx;
   background-color: #fff;
   text-align: center;
   box-shadow: 0 4rpx 4rpx rgb(221, 213, 213);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
 }

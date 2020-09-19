@@ -1,6 +1,4 @@
 <!-- miniprogram/pages/index/index.wxml -->
-<tab-bar title="{{pageTitle}}" backgroundColor="{{backgroundColor}}"></tab-bar>
-
 <view class="container">
 	<view class="bg-image">
 		<image
@@ -10,7 +8,11 @@
 		/>
 	</view>
 	<!-- 头部 -->
-	<view class="content-wrapper">
+  <view class="block" style="height: {{blockHeight}}px">
+    首页
+  </view>
+
+	<view class="content-wrapper" style="margin-top: {{blockHeight}}px">
 		<view class="header">
 			<!-- 热气球 -->
 			<image src="../../images/Hot-air-balloon.png" mode="widthFix" />

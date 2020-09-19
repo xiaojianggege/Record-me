@@ -19,7 +19,7 @@ Component({
     placeholder: {
       type: String,
       value: ''
-    }
+    },
   },
 
   /**

@@ -12,14 +12,9 @@ Component({
    * 组件的初始数据
    */
   data: {
-    time:''
   },
   lifetimes: {
-    attached: function () {
-      this.setData({
-        time: this.data.recordContent.createTime.substring(10, 16)
-      })
-    }
+  
   },
   /**
    * 组件的方法列表

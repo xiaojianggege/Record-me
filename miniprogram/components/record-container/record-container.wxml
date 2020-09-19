@@ -1,7 +1,7 @@
 <!-- components/record-container/record-container.wxml -->
 <view class="container" bind:longpress="delete">
 	<view class="header">
-		<view class="time">{{time}}</view>
+		<view class="time">{{recordContent.createTime}}</view>
 		<view>
 			<image
 			 class="expression"
