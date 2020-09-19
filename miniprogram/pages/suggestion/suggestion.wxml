@@ -9,3 +9,5 @@
  bind:submit="commitSuggestion"
 ></submit-info>
 
+<van-toast id="van-toast" />
+

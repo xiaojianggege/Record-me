@@ -76,7 +76,7 @@ Page({
           this.setData({
             remind: false
           })
-        }, 500)
+        }, 50)
       }
     })
   },
@@ -135,7 +135,7 @@ Page({
           this.setData({
             remind: false
           })
-        }, 500)
+        }, 50)
       }
     })
   },

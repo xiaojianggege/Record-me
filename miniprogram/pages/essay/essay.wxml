@@ -1,15 +1,16 @@
 <!--miniprogram/pages/essay/essay.wxml-->
 <tab-bar title="{{pageTitle}}"></tab-bar>
-
-<!-- <submit-info
- title="{{title}}"
- bind:submit="createRecord"
- showSticky="{{false}}"
- showClamp="{{true}}"
- placeholder="{{placeholder}}"
-></submit-info>
-<load remind="{{remind}}"></load>
-<van-toast id="van-toast" />-->
+<van-dialog
+ message="{{message}}"
+ title="确定返回？"
+ show="{{ show }}"
+ show-cancel-button
+ bind:cancel="onClose"
+ bind:confirm="onConfirm"
+ close-on-click-overlay
+>
+	<!-- <image src="https://img.yzcdn.cn/1.jpg" /> -->
+</van-dialog>
 <view class="container">
 	<view class="toast">涂涂改改</view>
 	<view class="title">
@@ -44,21 +45,7 @@
 			</van-dropdown-menu>
 		</view>
 		<view class="expressionIcon">
-			<image
-			 wx:if="{{value2 === 'happy'}}"
-			 src="../../images/happy.png"
-			 mode="widthFix"
-			/>
-			<image
-			 wx:elif="{{value2 === 'boring'}}"
-			 src="../../images/boring.png"
-			 mode="widthFix"
-			/>
-			<image
-			 wx:else
-			 src="../../images/sad.png"
-			 mode="widthFix"
-			/>
+			<image src="../../images/{{mood}}.png" mode="widthFix" />
 		</view>
 	</view>
 	<view class="clamp">
@@ -71,4 +58,6 @@
 		<view class="btn" bind:tap="createRecord">保存</view>
 	</view>
 </view>
+
+<van-toast id="van-toast" />
 

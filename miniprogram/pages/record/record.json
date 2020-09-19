@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "record": "../../components/record-container/record-container",
-    "load":"../../components/load/load"
+    "load":"../../components/load/load",
+    "van-dialog": "@vant/weapp/dialog/index"
   }
 }

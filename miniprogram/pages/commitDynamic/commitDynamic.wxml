@@ -10,7 +10,6 @@
 	 bind:confirm="onConfirm"
 	 close-on-click-overlay
 	>
-
 		<!-- <image src="https://img.yzcdn.cn/1.jpg" /> -->
 	</van-dialog>
 	<view class="header-content">
@@ -56,7 +55,7 @@
 				</view>
 			</block>
 		</view>
-		<view class="addPlace">
+		<view class="addPlace" bind:tap="addAddress">
 			<image src="../../images/adress.png" mode="widthFix" />
 			<span>添加地址</span>
 		</view>

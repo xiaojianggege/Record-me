@@ -5,6 +5,7 @@
   background-color: #fff;
   box-shadow: 0 8rpx 4rpx #caced1;
   border-radius: 15rpx;
+  margin-bottom: 40rpx;
 }
 .header{
   display: flex;

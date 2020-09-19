@@ -24,7 +24,9 @@ Page({
     ],
     mood: 'happy',
     noteTitle: '',
-    noteContent: ''
+    noteContent: '',
+    message:'',
+    show:false
   },
   onSwitch1Change(e) {
     let state = e.detail
@@ -50,47 +52,76 @@ Page({
     }, 1500)
   },
   titleInput(e) {
-    console.log(e.detail.value);
     this.setData({
       noteTitle: e.detail.value
     })
   },
   contentInput(e) {
-    console.log(e.detail.value);
     this.setData({
-      titleContent: e.detail.value
+      noteContent: e.detail.value
     })
   },
-  createRecord(e) {
+  cancel() {
+    if (this.data.noteContent.length <= 0) {  //直接返回 
+      this.onConfirm()
+    } else {  //用户有输入
+      this.setData({
+        message: '请注意，当前正在编辑的内容将会清空',
+        show: true
+      })
+    }
+  },
+  onConfirm() {
+    wx.navigateBack({
+      delta: 1, // 回退前 delta(默认为1) 页面
+    })
+  },
+
+  onClose() {
+    this.setData({
+      show: false
+    })
+  },
+  createRecord() {
     const that = this
-    if (e.detail.content.length <= 0) {
-      Toast('不能为空哦！')
+    if (that.data.noteContent.length <= 0) {
+      Toast('内容不能为空哦！')
       return
     }
+    wx.showLoading({
+      title: '保存中',
+    });
     that.setData({
       remind: true
     })
+    let title = that.data.noteTitle
+    if (title.length <= 0)
+      title = '无题'
     let createTime = $util.dateFormat("YYYY-mm-dd HH:MM", new Date())
     //调用云函数
     wx.cloud.callFunction({
       name: 'createRecord',
       data: {
-        content: e.detail.content,
+        content: that.data.noteContent,
+        title: title,
+        state: that.data.state,
+        mood: that.data.mood,
         createTime
       },
       success(res) {
         that.setData({
           remind: false
         })
+      },
+      fail(err) {
+        console.log(err)
+      }, complete: () => {
         setTimeout(() => {
+          wx.hideLoading()
           wx.redirectTo({
             url: '/pages/record/record'
           })
         }, 50);
-
-      },
-      fail(err) {
-        console.log(err)
       }
     })
   },

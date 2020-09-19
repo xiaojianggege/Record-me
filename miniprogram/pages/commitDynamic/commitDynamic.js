@@ -29,7 +29,6 @@ Page({
     this.setData({
       show: false
     })
-
   },
   cancel() {
     if (this.data.content.length > 0 || this.data.tempFilePaths.length > 0) { //用户有输入 
@@ -40,11 +39,9 @@ Page({
     } else {  //直接返回 
       this.onConfirm()
     }
-
   },
 
   getImage() {
-
     let that = this
     let tempFilePaths = that.data.tempFilePaths
     if (tempFilePaths.length >= 3) {
@@ -90,7 +87,6 @@ Page({
           filePath: tempFilePaths[i],//临时路径
           success: (res) => {
             let fileID = that.data.fileID
-            console.log(res);
             fileID.push(res.fileID)
             that.setData({ //云存储图片路径,可以把这个路径存到集合，要用的时候再取出来
               fileID
@@ -98,11 +94,7 @@ Page({
           }, fail: (err) => {
             console.log(err);
           }, complete: () => {
-            if (i === tempFilePaths.length - 1) {
-              console.log(tempFilePaths.length);
-              console.log(this.data.fileID);
-              console.log('执行', i);
-           
+            if (i === tempFilePaths.length - 1) {        
               setTimeout(()=>{
                 wx.hideLoading()
                 that.createNote()
@@ -122,8 +114,6 @@ Page({
     });
     let createTime = $util.dateFormat("YYYY-mm-dd HH:MM", new Date())
     //调用云函数
-    // console.log(this.data.fileID);
-
     wx.cloud.callFunction({
       name: 'createNote',
       data: {
@@ -133,7 +123,6 @@ Page({
         updateTime: createTime
       },
       success(res) {
-        // console.log(res)
         setTimeout(() => {
           wx.redirectTo({
             url: '/pages/note/note'
@@ -178,9 +167,11 @@ Page({
       this.setData({
         remind: false
       })
-    }, 500)
+    }, 50)
   },
-
+  addAddress(){
+    Toast('功能暂未开放')
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

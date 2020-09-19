@@ -1,4 +1,4 @@
-// miniprogram/pages/suggestion/suggestion.js
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
 
   /**
@@ -15,7 +15,13 @@ Page({
   onLoad: function (options) {
   },
   commitSuggestion(e) {
-    console.log(e.detail.content);
+    if(e.detail.content.length==0){
+      Toast('内容不能为空哦')
+      return 
+    }
+    wx.showLoading({
+      title: '提交中',
+    });
     //调用云函数
     wx.cloud.callFunction({
       name: 'createSuggest',
@@ -23,14 +29,13 @@ Page({
         content: e.detail.content
       },
       success(res) {
-        console.log(res)
-
-        // Notify({ type: 'primary', message: '创建成功', duration: 1500, selector: '#notify-selector', background: '#28a745' });
+        // console.log(res)
         setTimeout(() => {
+          wx.hideLoading()
           wx.redirectTo({
             url: '/pages/personal/personal'
           })
-        }, 2000);
+        }, 50);
       },
       fail(err) {
         console.log(err)

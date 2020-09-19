@@ -1,17 +1,19 @@
 <!-- components/record-container/record-container.wxml -->
-<view class="container">
-  <view class="header">
-    <view class="time">19:26</view>
-    <view>
-      <image class="expression" wx:if="{{a === 'happy'}}" src="../../images/happy.png" mode="widthFix"/>
-      <image class="expression" wx:elif="{{a === 'boring'}}" src="../../images/boring.png" mode="widthFix"/>
-      <image class="expression" wx:else="{{a === 'sad'}}" src="../../images/sad.png" mode="widthFix"/>
-    </view>
-  </view>
-  <view class="content">
-    <view class="title">电话费点附近开房</view>
-    <view class="content-main">登记反馈京东方等级分开登记反馈代付款康复科</view>
-  </view>
-  <view class="tag">学习tag</view>
+<view class="container" bind:longpress="delete">
+	<view class="header">
+		<view class="time">{{time}}</view>
+		<view>
+			<image
+			 class="expression"
+			 src="../../images/{{recordContent.mood}}.png"
+			 mode="widthFix"
+			/>
+		</view>
+	</view>
+	<view class="content">
+		<view class="title">{{recordContent.title}}</view>
+		<view class="content-main">{{recordContent.content}}</view>
+	</view>
+	<view class="tag">{{recordContent.state}}</view>
 </view>
 

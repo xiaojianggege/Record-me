@@ -11,9 +11,12 @@ exports.main = async (event, context) => {
   //连通数据库
   return await db.collection('record').add({
     data: {
-      content: event.content,
       createBy: userInfo.openId,
-      createTime: event.createTime
-    } 
+      createTime: event.createTime,
+      title: event.title,
+      content: event.content,
+      state: event.state,
+      mood: event.mood,
+    }
   })
 }

@@ -1,6 +1,15 @@
 <tab-bar title="{{pageTitle}}"></tab-bar>
+<van-dialog
+ message="{{message}}"
+ title="确定删除？"
+ show="{{ dialogShow }}"
+ show-cancel-button
+ bind:cancel="onClose"
+ bind:confirm="onConfirm"
+ close-on-click-overlay
+>
+</van-dialog>
 <view class="container">
-
 	<view class="color-envelope">
 		<image src="../../images/color-envelope.png" mode="widthFix" />
 	</view>
@@ -9,10 +18,13 @@
 	</view>
 	<view class="record-wrapper">
 		<load remind="{{remind}}"></load>
-		<!-- <block wx:for="{{recordContent}}" wx:key="index">
-			
-    </block> -->
-    <record></record>
+		<block wx:for="{{recordContent}}" wx:key="index">
+			<record
+			 recordContent="{{item}}"
+			 data-id="{{item._id}}"
+			 bind:deleteRecord="deleteRecord"
+			></record>
+		</block>
 	</view>
 	<!-- 占位块 -->
 	<view class="block-space"></view>

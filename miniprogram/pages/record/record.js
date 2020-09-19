@@ -1,4 +1,4 @@
-// miniprogram/pages/record/record.js
+const $util = require('../../common/util')
 Page({
 
   /**
@@ -7,32 +7,84 @@ Page({
   data: {
     pageTitle: '便签',
     recordContent: [],
-    remind:true
+    remind: true,
+    dialogShow: false,
+    deleteId: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    this.getRecord()
   },
   getRecord() {
-    const that=this
+    const that = this
     //调用云函数
     wx.cloud.callFunction({
       name: 'getRecord',
       success(res) {
+        // console.log(res);
+        if (res.result.data.length == 0) {
+          that.setData({
+            recordContent: [{
+              createTime:$util.dateFormat("YYYY-mm-dd HH:MM", new Date()) ,
+              title: "亲，当前还没有便签哦",
+              content: "点击下方按钮创建第一题便签",
+              state: "教程tag",
+              mood: "happy"
+            }]
+          })
+          return
+        }
         that.setData({
           recordContent: res.result.data.reverse()
         })
-        console.log(res)
       },
       fail(err) {
         console.log(err)
-      },complete: () => {
+      }, complete: () => {
         this.setData({
-          remind:false
+          remind: false
         })
+      }
+    })
+  },
+  deleteRecord(e) {
+    this.setData({
+      dialogShow: true,
+      deleteId: e.currentTarget.dataset.id
+    })
+  },
+  onClose() {
+    this.setData({
+      dialogShow: false,
+      deleteId: ''
+    })
+  },
+  onConfirm() {   //确定删除
+    this.setData({
+      remind: true
+    })
+    console.log(this.data.deleteId);
+    wx.cloud.callFunction({
+      name: 'deleteRecord',
+      data: {
+        id: this.data.deleteId
+      },
+      success(res) {
+        console.log(res);
+      },
+      fail(err) {
+        console.log(err)
+      },
+      complete: () => {
+        this.onLoad()
+        setTimeout(() => {
+          this.setData({
+            remind: false
+          })
+        }, 500)
       }
     })
   },
@@ -47,7 +99,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getRecord()
+
   },
 
   /**
