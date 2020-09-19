@@ -14,7 +14,7 @@ exports.main = async (event, context) => {
       createBy: userInfo.openId,
       fileID:event.fileID,
       createTime:event.createTime,
-      updateTime: event.updateTime
+      time: event.time
     }
   })
 }

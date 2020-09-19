@@ -33,10 +33,12 @@ Page({
   },
   confirm(val) {
     let currentTime = $util.dateFormat("YYYY-mm", new Date(val.detail))
+    console.log(currentTime);
     this.setData({
       show: false,
       currentTime
     })
+    this.getNote(currentTime)
   },
   cancel() {
     this.setData({
@@ -87,11 +89,11 @@ Page({
   // YYYY-mm-dd HH:MM
   onLoad: function (options) {
     this.getNote()
-    let time=$util.dateFormat("YYYY-mm-dd", new Date())
-    let currentTime =time.substring(0,7)
-    let nowYear = time.substring(0,4)
-    let nowMonth = time.substring(5,7) - 1
-    let nowDay =time.substring(8,10)
+    let time = $util.dateFormat("YYYY-mm-dd", new Date())
+    let nowYear = time.substring(0, 4)
+    let currentTime = time.substring(0, 7)
+    let nowMonth = time.substring(5, 7) - 1
+    let nowDay = time.substring(8, 10)
     this.setData({
       currentTime,
       userInfo: app.globalData.userInfo,
@@ -112,20 +114,39 @@ Page({
   onShow: function () {
 
   },
-  getNote() {
+  getNote(time) {
+    let currentTime
+    if (time) {
+      currentTime = time
+    } else {
+      currentTime = $util.dateFormat("YYYY-mm", new Date())
+    }
+    console.log(currentTime);
+
     const that = this
     //调用云函数
     wx.cloud.callFunction({
       name: 'getNote',
+      data: {
+        time: currentTime
+      },
       success(res) {
+        console.log(res);
         if (res.result.data.length == 0) {
           that.setData({
-            noteContent: [{ content: '当前还没有动态哦！点击下方加号创建自己的第一条动态', createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()),fileID:["cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/heart.jpg"] }]
+            noteContent: [{ content: '当前月份还没有动态哦！点击下方加号创建自己的动态吧', createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()),fileID:["cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/heart.jpg"] }]
           })
           return
         };
+        let noteContent = res.result.data.reverse()
+        for (let item of noteContent) {
+          // console.log(item.currentTime);
+          
+          item.month = item.createTime.substring(5, 7)
+          item.day = item.createTime.substring(8, 10)
+        }
         that.setData({
-          noteContent: res.result.data.reverse()
+          noteContent
         })
       },
       fail(err) {

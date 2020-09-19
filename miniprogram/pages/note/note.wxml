@@ -52,6 +52,8 @@
 				 content="{{item.content}}"
 				 imgs="{{item.fileID}}"
 				 createTime="{{item.createTime}}"
+				 month="{{item.month}}"
+				 day="{{item.day}}"
 				></show-note>
 			</block>
 

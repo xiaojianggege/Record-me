@@ -10,6 +10,7 @@ exports.main = async (event, context) => {
   const userInfo = event.userInfo
   //先查询有无该openId
   return await db.collection('note').where({
-    createBy: userInfo.openId
+    createBy: userInfo.openId,
+    time:event.time
   }).get()
 }
