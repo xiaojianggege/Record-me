@@ -7,6 +7,7 @@ Page({
    */
   data: {
     userInfo: {},
+    pagetitle: '动态',
     show: false,
     minDate: new Date(2020, 7, 1).getTime(),
     maxDate: undefined,
@@ -133,7 +134,7 @@ Page({
         console.log(res);
         if (res.result.data.length == 0) {
           that.setData({
-            noteContent: [{ content: '当前月份还没有动态哦！点击下方加号创建自己的动态吧', createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()) }]
+            noteContent: [{ content: '当前月份还没有动态哦！点击下方加号创建自己的动态吧', createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()),fileID:["cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/heart.jpg"] }]
           })
           return
         };

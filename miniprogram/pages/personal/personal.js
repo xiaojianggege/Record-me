@@ -8,8 +8,8 @@ Page({
   data: {
     pageTitle: '我的',
     sectionInfo: [
-      { iconUrl: '../../images/adviceImg.png', title: '意见建议'},
-      { iconUrl: '../../images/questionIcon.png', title: '关于我们'}
+      { iconUrl: '../../images/adviceImg.png', title: '意见建议', url: '../suggestion/suggestion',},
+      { iconUrl: '../../images/questionIcon.png', title: '关于我们', url: '../about-us/about-us',}
     ],
     userInfo:{}
   },
@@ -22,9 +22,9 @@ Page({
       userInfo:app.globalData.userInfo
     })
   },
-  gotoSuggestion(){
+  gotoSuggestion(e){
     wx.navigateTo({
-      url: '../suggestion/suggestion',
+      url: e.currentTarget.dataset.url
     })
   },
   /**

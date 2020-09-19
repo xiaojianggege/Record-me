@@ -10,11 +10,12 @@ Page({
     backgroundColor: '#6A5D6F',
     currentTime: '',
     sloganList: [
+      '人生但苦无妨，良人归来极好',
       '海阔凭鱼跃，天高任鸟飞',
-      '醉后不知天在水，满船清梦压星河',
-      '人生自是有情痴，此恨无关风与月',
-      '人生但苦无妨，良人归来极好'
-    ]
+      '世事一场大梦，人生几度新凉',
+      '人生自是有情痴，此恨无关风与月'
+    ],
+    blockHeight: wx.user.statusBarHeight + wx.user.navBarHeight 
   },
 
   /**

@@ -12,7 +12,7 @@
 			 name="name"
 			 bindinput="contentInput"
 			></textarea>
-			<button
+			<button 
 			 class="button"
 			 size="mini"
 			 form-type="submit"

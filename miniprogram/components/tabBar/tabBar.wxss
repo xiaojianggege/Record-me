@@ -11,6 +11,7 @@
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 3rpx;
   color: #fff;
+  font-size: 30rpx !important;
 }
 .content-img{
   width: 35rpx;

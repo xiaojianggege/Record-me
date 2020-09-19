@@ -40,6 +40,9 @@
   text-align: center;
   color: #fff;
   z-index: 90;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
  
 }
 .content-top__portrait {
