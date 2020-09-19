@@ -120,7 +120,7 @@ Page({
         content: this.data.content,
         fileID: this.data.fileID,
         createTime,
-        updateTime: createTime
+        time: createTime.substring(0, 7)
       },
       success(res) {
         setTimeout(() => {

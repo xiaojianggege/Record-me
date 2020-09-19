@@ -4,10 +4,9 @@
  name="showNote"
 >
 	<van-cell-group>
-
 		<view class="container">
 			<view class="item-time">
-				<text>{{month}}</text>
+				<text>{{month}}月</text>
 				<text class="day">{{day}}</text>
 			</view>
 
@@ -40,7 +39,6 @@
 				<text></text>
 			</view>
 		</view>
-
 	</van-cell-group>
 	<view
 	 slot="right"
