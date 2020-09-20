@@ -129,7 +129,7 @@ Page({
       success(res) {
         if (res.result.data.length == 0) {
           that.setData({
-            noteContent: [{ content: '当前月份还没有动态哦！点击下方加号创建自己的动态吧', createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()), fileID: ["cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/heart.jpg"] }]
+            noteContent: [{ content: '当前月份还没有动态哦！点击下方加号创建自己的动态吧', createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()),month:$util.dateFormat("YYYY-mm-dd HH:MM", new Date()).substring(5,7),day:$util.dateFormat("YYYY-mm-dd HH:MM", new Date()).substring(8,10), fileID: ["cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/heart.jpg"] }]
           })
           return
         };
