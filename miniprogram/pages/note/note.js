@@ -33,7 +33,6 @@ Page({
   },
   confirm(val) {
     let currentTime = $util.dateFormat("YYYY-mm", new Date(val.detail))
-    console.log(currentTime);
     this.setData({
       show: false,
       currentTime
@@ -61,17 +60,17 @@ Page({
     this.setData({
       remind: true
     })
-    console.log(this.data.deleteId);
+   
     wx.cloud.callFunction({
       name: 'deleteNote',
       data: {
         id: this.data.deleteId
       },
       success(res) {
-        console.log(res);
+       
       },
       fail(err) {
-        console.log(err)
+      
       },
       complete: () => {
         this.onLoad()
@@ -121,8 +120,6 @@ Page({
     } else {
       currentTime = $util.dateFormat("YYYY-mm", new Date())
     }
-    console.log(currentTime);
-
     const that = this
     //调用云函数
     wx.cloud.callFunction({
@@ -131,7 +128,6 @@ Page({
         time: currentTime
       },
       success(res) {
-        console.log(res);
         if (res.result.data.length == 0) {
           that.setData({
             noteContent: [{ content: '当前月份还没有动态哦！点击下方加号创建自己的动态吧', createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()),fileID:["cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/heart.jpg"] }]
@@ -140,8 +136,6 @@ Page({
         };
         let noteContent = res.result.data.reverse()
         for (let item of noteContent) {
-          // console.log(item.currentTime);
-          
           item.month = item.createTime.substring(5, 7)
           item.day = item.createTime.substring(8, 10)
         }
@@ -150,7 +144,6 @@ Page({
         })
       },
       fail(err) {
-        console.log(err)
       },
       complete: () => {
         setTimeout(() => {

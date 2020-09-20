@@ -18,7 +18,6 @@
   z-index: -1;
 }
 .content-wrapper{
-  overflow: hidden;
   z-index: 999;
 }
 .bg-image image{
@@ -68,9 +67,9 @@
   background-color: #F6F8F9;
 } */
 .button-content .line{  
-  margin: 0 auto;
+  margin: -100rpx auto 0;
   width: 2rpx;
-  height: 600rpx;
+  height: 700rpx;
   background-color: #F6F8F9;
 }
 .button{

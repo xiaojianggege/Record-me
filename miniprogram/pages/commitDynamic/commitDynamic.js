@@ -92,7 +92,6 @@ Page({
               fileID
             });
           }, fail: (err) => {
-            console.log(err);
           }, complete: () => {
             if (i === tempFilePaths.length - 1) {        
               setTimeout(()=>{
@@ -130,7 +129,6 @@ Page({
         }, 50);
       },
       fail(err) {
-        console.log(err)
       },
       complete: () => {
         this.setData({

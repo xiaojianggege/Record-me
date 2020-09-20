@@ -1,5 +1,5 @@
 <!--start.wxml-->
-<image class="start_bg" src="/images/more/start_bg.jpg"></image>
+<image class="start_bg" src="/images/more/start_bg.jpg" mode="aspectFill"></image>
 <view class="halfPage" style="padding-top:{{statusBarHeight}}px"></view>
 <view class="container">
 	<view class="remind-box" wx:if="{{remind}}">

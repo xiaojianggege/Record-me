@@ -29,7 +29,6 @@ Page({
         content: e.detail.content
       },
       success(res) {
-        // console.log(res)
         setTimeout(() => {
           wx.hideLoading()
           wx.redirectTo({
@@ -38,7 +37,6 @@ Page({
         }, 50);
       },
       fail(err) {
-        console.log(err)
       }
     })
   },

@@ -41,7 +41,7 @@
 		</view>
 		<!-- 两个按钮 -->
 		<view class="button-wrapper">
-			<view class="button-content">
+			<view  class="button-content" animation="{{animationData}}">
 				<view class="line"></view>
 				<view class="button-pad">
 					<view class="button" bindtap="gotoNote">
@@ -49,7 +49,7 @@
 					</view>
 				</view>
 			</view>
-			<view class="button-content">
+			<view class="button-content" animation="{{animationData}}">
 				<view class="line"></view>
 				<view class="button-pad">
 					<view class="button" bindtap="gotoRecord">

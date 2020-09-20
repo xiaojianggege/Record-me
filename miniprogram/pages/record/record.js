@@ -24,7 +24,7 @@ Page({
     wx.cloud.callFunction({
       name: 'getRecord',
       success(res) {
-        // console.log(res);
+      
         if (res.result.data.length == 0) {
           that.setData({
             recordContent: [{
@@ -42,7 +42,6 @@ Page({
         })
       },
       fail(err) {
-        console.log(err)
       }, complete: () => {
         this.setData({
           remind: false
@@ -66,17 +65,14 @@ Page({
     this.setData({
       remind: true
     })
-    console.log(this.data.deleteId);
     wx.cloud.callFunction({
       name: 'deleteRecord',
       data: {
         id: this.data.deleteId
       },
       success(res) {
-        console.log(res);
       },
       fail(err) {
-        console.log(err)
       },
       complete: () => {
         this.onLoad()
