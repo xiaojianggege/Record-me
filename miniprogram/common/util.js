@@ -1,4 +1,4 @@
-  
+
   //格式化时间
   // "YYYY-mm-dd HH:MM:SS"
  const dateFormat=(fmt, date)=> {
