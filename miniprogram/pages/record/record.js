@@ -84,7 +84,7 @@ Page({
             recordContent: [{
               createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()),
               title: "亲，当前还没有便签哦",
-              content: "点击下方按钮创建第一题便签",
+              content: "点击下方加号按钮创建第一条便签",
               state: "教程tag",
               mood: "happy"
             }]
@@ -112,10 +112,15 @@ Page({
     })
   },
   deleteRecord(e) {
-    this.setData({
-      showShare: true,
-      deleteId: e.currentTarget.dataset.id
-    })
+    if(e.currentTarget.dataset.id){
+      this.setData({
+        showShare: true,
+        deleteId: e.currentTarget.dataset.id
+      })
+    }else{
+      Toast('当前还没有便签哦，快去创建吧')
+    }
+   
   },
   onClose() {
     this.setData({

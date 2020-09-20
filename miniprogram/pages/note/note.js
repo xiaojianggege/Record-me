@@ -45,10 +45,15 @@ Page({
     })
   },
   deleteNote(e) {
-    this.setData({
-      dialogShow: true,
-      deleteId: e.currentTarget.dataset.id
-    })
+    if(e.currentTarget.dataset.id){
+      this.setData({
+        dialogShow: true,
+        deleteId: e.currentTarget.dataset.id
+      })
+    }else{
+      Toast('当前还没有发布动态哦，快去创建吧')
+    }
+  
   },
   onClose() {
     this.setData({
