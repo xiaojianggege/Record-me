@@ -14,7 +14,7 @@
 		<image class="head-img" src="../../images/note_bg_.gif" />
 	</view>
 	<view class="content">
-		<view class="content-top">
+		<view class="content-top" bind:tap="gotoPersonal">
 			<text class="content-top__name">{{userInfo.nickName}}</text>
 			<view class="content-top__portrait">
 				<image class="portrait" src="{{userInfo.avatarUrl}}"></image>

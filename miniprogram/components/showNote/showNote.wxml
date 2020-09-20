@@ -15,6 +15,8 @@
 				<view class="item-content__pic">
 					<block wx:for="{{imgs}}" wx:key="index">
 						<image
+						 bindtap="topic_preview"
+						 data-url='{{item}}'
 						 class="item-content__pic-image"
 						 src="{{item}}"
 						 mode="aspectFill"

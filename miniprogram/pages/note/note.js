@@ -60,17 +60,17 @@ Page({
     this.setData({
       remind: true
     })
-   
+
     wx.cloud.callFunction({
       name: 'deleteNote',
       data: {
         id: this.data.deleteId
       },
       success(res) {
-       
+
       },
       fail(err) {
-      
+
       },
       complete: () => {
         this.onLoad()
@@ -113,24 +113,23 @@ Page({
   onShow: function () {
 
   },
+  gotoPersonal() {
+    wx.redirectTo({
+      url: '../personal/personal'
+    })
+  },
   getNote(time) {
-    let currentTime
-    if (time) {
-      currentTime = time
-    } else {
-      currentTime = $util.dateFormat("YYYY-mm", new Date())
-    }
     const that = this
     //调用云函数
     wx.cloud.callFunction({
       name: 'getNote',
       data: {
-        time: currentTime
+        time
       },
       success(res) {
         if (res.result.data.length == 0) {
           that.setData({
-            noteContent: [{ content: '当前月份还没有动态哦！点击下方加号创建自己的动态吧', createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()),fileID:["cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/heart.jpg"] }]
+            noteContent: [{ content: '当前月份还没有动态哦！点击下方加号创建自己的动态吧', createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()), fileID: ["cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/heart.jpg"] }]
           })
           return
         };
