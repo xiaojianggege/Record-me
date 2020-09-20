@@ -1,4 +1,5 @@
 const $util = require('../../common/util')
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
 
   /**
@@ -9,26 +10,79 @@ Page({
     recordContent: [],
     remind: true,
     dialogShow: false,
-    deleteId: ''
+    deleteId: '',
+    showShare: false,
+    recordTopId:'',
+    options: [
+      {
+        name: '置顶',
+        icon: 'cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/top-icon.png',
+      },
+      {
+        name: '放置首页',
+        icon: 'cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/index-icon.png',
+      },
+      {
+        name: '删除',
+        icon: 'cloud://wodeyun-g8zb3.776f-wodeyun-g8zb3-1302804316/static/delete-icon.png',
+      },
+    ]
   },
+  clickOverlay() {
+    this.setData({
+      showShare: false,
+      deleteId: ''
+    })
+  },
+  onSelect(e) {
 
+    if (e.detail.index == 0) {
+      for (let item of this.data.recordContent) {
+        if (item._id == this.data.deleteId) {
+          this.setData({
+            showShare: false
+          })
+          wx.setStorageSync("recordTopId", item._id);
+          Toast('置顶成功')
+          this.onLoad()
+          return
+        }
+      }
+    } else if (e.detail.index == 1) {
+      console.log('放置');
+      Toast('开发中')
+    }
+    else {
+      this.setData({
+        showShare: false,
+        dialogShow: true
+      })
+    }
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // this.getRecordTop()
     this.getRecord()
   },
+ 
   getRecord() {
+    let recordTopId = wx.getStorageSync('recordTopId')
+    this.setData({
+      recordTopId
+    })
     const that = this
     //调用云函数
     wx.cloud.callFunction({
       name: 'getRecord',
       success(res) {
-      
+
         if (res.result.data.length == 0) {
           that.setData({
             recordContent: [{
-              createTime:$util.dateFormat("YYYY-mm-dd HH:MM", new Date()) ,
+              createTime: $util.dateFormat("YYYY-mm-dd HH:MM", new Date()),
               title: "亲，当前还没有便签哦",
               content: "点击下方按钮创建第一题便签",
               state: "教程tag",
@@ -37,8 +91,16 @@ Page({
           })
           return
         }
+        let recordContent = res.result.data.reverse()
+        for (var i = 0; i < recordContent.length; i++) {
+          if (recordContent[i]._id === recordTopId) {
+            recordContent.unshift(recordContent[i]); // 再添加到第一个位置
+            recordContent.splice(i + 1, 1); // 如果数据组存在该元素，则把该元素删除
+            break;
+          }
+        }
         that.setData({
-          recordContent: res.result.data.reverse()
+          recordContent
         })
       },
       fail(err) {
@@ -51,7 +113,7 @@ Page({
   },
   deleteRecord(e) {
     this.setData({
-      dialogShow: true,
+      showShare: true,
       deleteId: e.currentTarget.dataset.id
     })
   },
@@ -78,9 +140,10 @@ Page({
         this.onLoad()
         setTimeout(() => {
           this.setData({
-            remind: false
+            remind: false,
+            deleteId: ''
           })
-        }, 500)
+        }, 200)
       }
     })
   },

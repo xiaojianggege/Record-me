@@ -31,5 +31,14 @@ Component({
     onClick() {
       this.triggerEvent('deleteNote')  //抛出方法
     },
+    topic_preview(e) {
+      var that = this;
+      var url = e.currentTarget.dataset.url;
+      wx.previewImage({
+        current: url, // 当前显示图片的http链接
+        urls: that.data.imgs // 需要预览的图片http链接列表
+      })
+
+    }
   }
 })

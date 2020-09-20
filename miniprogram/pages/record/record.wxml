@@ -1,4 +1,12 @@
 <tab-bar title="{{pageTitle}}"></tab-bar>
+<van-share-sheet
+ title="选择你的操作"
+ show="{{ showShare }}"
+ options="{{ options }}"
+ bind:click-overlay="clickOverlay"
+ bind:select="onSelect"
+ class="share-sheet"
+/>
 <van-dialog
  message="{{message}}"
  title="确定删除？"
@@ -9,6 +17,7 @@
  close-on-click-overlay
 >
 </van-dialog>
+
 <view class="container">
 	<view class="color-envelope">
 		<image src="../../images/color-envelope.png" mode="widthFix" />
@@ -30,4 +39,6 @@
 	<view class="block-space"></view>
 </view>
 <footer-bar/>
+
+<van-toast id="van-toast" />
 

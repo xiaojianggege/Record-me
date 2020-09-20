@@ -5,12 +5,18 @@ cloud.init()
 const db = cloud.database({ env })
 // 云函数入口函数
 exports.main = async (event, context) => {
-  console.log(event);
-
   const userInfo = event.userInfo
-  //先查询有无该openId
-  return await db.collection('note').where({
-    createBy: userInfo.openId,
-    time:event.time
-  }).get()
+  if (event.time) {
+    //先查询有无该openId
+    return await db.collection('note').where({
+      createBy: userInfo.openId,
+      time: event.time
+    }).get()
+  } else {
+    return await db.collection('note').where({
+      createBy: userInfo.openId
+    }).get()
+  }
+
+
 }
